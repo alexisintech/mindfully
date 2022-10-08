@@ -10,7 +10,8 @@ module.exports = {
   },
   getAddEntry: async (req, res) => {
     try {
-      res.render("addEntry.ejs");
+      const entries = await Entry.find({ user: req.user.id });
+      res.render("addEntry.ejs", { user: req.user });
     } catch (err) {
       console.log(err);
     }
