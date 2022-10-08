@@ -1,0 +1,61 @@
+.site-title{
+    font-size:2rem;
+}
+
+#guest-site-title{
+    padding:0;
+}
+
+#logged-in-site-title{
+    padding-right:5rem;
+}
+
+.navbar-nav{
+    font-size:1rem;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 100vh;
+    padding-top:60px;
+    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.glass-card{
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 26px 0 rgba(66, 64, 62, 0.37);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.textarea-shadow{
+    box-shadow: -10px 10px 15px 2px rgb(66, 64, 62, .37);
+}
+
+.new-entry-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-width:400px;
+    min-height:400px;
+    color:rgb(62, 62, 62, 0.8);
+    font-size:x-large;
+    text-align:center;
+    margin: 0;
+}
+
+textarea::placeholder{
+    font-style:italic;
+    color:rgba(0, 0, 0, 0.5) !important;
+}
+
+textarea:focus, input:focus, .uneditable-input:focus {   
+    border-color: rgba(191, 226, 255, 0.8) !important;
+    box-shadow: -10px 10px 15px 2px rgba(229, 103, 23, 0.075) inset, 0 0 30px 5px rgba(38, 104, 179, 0.6) !important;
+    outline: 0 none !important;
+}

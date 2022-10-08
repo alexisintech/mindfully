@@ -1,46 +1,91 @@
-<%- include('partials/header') -%>
-<div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-          </div>
-          <div class="mt-5">
-            <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
-          </div>
-      </div>
-      <div class="col-6">
-        <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
-      </div>  
+<%- include('partials/logged-in-header') -%>
+
+<main class="masthead">
+  <div class="d-flex h-100 align-items-center justify-content-center">
+    <div class="w-50 d-flex align-items-center justify-content-center">
+      <section class="ftco-section">
+	    	<div class="container">
+	    		<div class="row justify-content-center">
+	    			<div class="col-md-6 text-center">
+	    				<span class="todaysDate"></span>
+	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-md-12">
+	    				<div class="content w-100">
+	    			    <div class="calendar-container">
+	    			      <div class="calendar"> 
+	    			        <div class="year-header"> 
+	    			          <span class="left-button fa fa-chevron-left" id="prev"> </span> 
+	    			          <span class="year" id="label"></span> 
+	    			          <span class="right-button fa fa-chevron-right" id="next"> </span>
+	    			        </div> 
+	    			        <table class="months-table w-100"> 
+	    			          <tbody>
+	    			            <tr class="months-row">
+	    			              <td class="month">Jan</td> 
+	    			              <td class="month">Feb</td> 
+	    			              <td class="month">Mar</td> 
+	    			              <td class="month">Apr</td> 
+	    			              <td class="month">May</td> 
+	    			              <td class="month">Jun</td> 
+	    			              <td class="month">Jul</td>
+	    			              <td class="month">Aug</td> 
+	    			              <td class="month">Sep</td> 
+	    			              <td class="month">Oct</td>          
+	    			              <td class="month">Nov</td>
+	    			              <td class="month">Dec</td>
+	    			            </tr>
+	    			          </tbody>
+	    			        </table> 
+                  
+	    			        <table class="days-table w-100"> 
+	    			          <td class="day">Sun</td> 
+	    			          <td class="day">Mon</td> 
+	    			          <td class="day">Tue</td> 
+	    			          <td class="day">Wed</td> 
+	    			          <td class="day">Thu</td> 
+	    			          <td class="day">Fri</td> 
+	    			          <td class="day">Sat</td>
+	    			        </table> 
+	    			        <div class="frame"> 
+	    			          <table class="dates-table w-100"> 
+	    		              <tbody class="tbody">             
+	    		              </tbody> 
+	    			          </table>
+	    			        </div> 
+							<form action="/addEntry" method="GET">
+	    			        	<button class="button" id="add-button">Add Entry</button>
+							</form>
+	    			      </div>
+	    			    </div>
+	    			    <div class="events-container">
+	    			    </div>
+	    			    <div class="dialog" id="dialog">
+	    			        <h2 class="dialog-header"> Add New Event </h2>
+	    			        <form class="form" id="form">
+	    			          <div class="form-container">
+	    			            <label class="form-label" id="valueFromMyButton" for="name">Event name</label>
+	    			            <input class="input" type="text" id="name" maxlength="36">
+	    			            <label class="form-label" id="valueFromMyButton" for="count">Number of people to invite</label>
+	    			            <input class="input" type="number" id="count" min="0" max="1000000" maxlength="7">
+	    			            <input type="button" value="Cancel" class="button" id="cancel-button">
+	    			            <input type="button" value="OK" class="button button-white" id="ok-button">
+	    			          </div>
+	    			        </form>
+	    			      </div>
+	    			  </div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </section>
     </div>
   </div>
-</div>
+</main>
+
+<script src="/calendar/js/jquery.min.js"></script>
+<script src="/calendar/js/popper.js"></script>
+<script src="/calendar/js/bootstrap.min.js"></script>
+<script src="/calendar/js/main.js"></script>
+
 <%- include('partials/footer') -%>

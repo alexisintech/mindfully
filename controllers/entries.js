@@ -3,8 +3,14 @@ const Entry = require("../models/Entry");
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      const entries = await Entry.find({ user: req.user.id });
-      res.render("profile.ejs", { entries: entries, user: req.user });
+      res.render("profile.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAddEntry: async (req, res) => {
+    try {
+      res.render("addEntry.ejs");
     } catch (err) {
       console.log(err);
     }
