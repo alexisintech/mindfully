@@ -26,6 +26,7 @@ module.exports = {
   getEntry: async (req, res) => {
     try {
       const entry = await Entry.findById(req.params.id);
+      console.log(entry);
       res.render("entry.ejs", { entry: entry, user: req.user });
     } catch (err) {
       console.log(err);
