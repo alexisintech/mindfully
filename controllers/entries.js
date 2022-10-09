@@ -16,6 +16,13 @@ module.exports = {
       console.log(err);
     }
   },
+  getBlank: async (req, res) => {
+    try {
+      res.render("blank.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getEntry: async (req, res) => {
     try {
       const entry = await Entry.findById(req.params.id);
