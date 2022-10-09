@@ -16,6 +16,11 @@ $(document).ready(function(){
     init_calendar(date);
     var events = check_events(today, date.getMonth()+1, date.getFullYear());
     show_events(events, months[date.getMonth()], today);
+    $(".add-entry-container").show();
+    var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
+    var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
+    $(add_entry_form).append(add_entry_button)
+    $(".add-entry-container").append(add_entry_form)
 });
 
 // Initialize the calendar by appending the HTML dates
@@ -77,11 +82,27 @@ function days_in_month(month, year) {
 
 // Event handler for when a date is clicked
 function date_click(event) {
+    $(".add-entry-container").empty();
     $(".events-container").show(250);
     // $("#dialog").hide(250);
     $(".active-date").removeClass("active-date");
     $(this).addClass("active-date");
     show_events(event.data.events, event.data.month, event.data.day, event.data.year);
+    console.log(event.data.events, event.data.month, event.data.day, event.data.year);
+    let date = new Date();
+    let dayNow = date.getDate();
+    let month = date.getMonth();
+    let options = { month: 'long' };
+    month = new Intl.DateTimeFormat('en-US', options).format(date);
+    let yearNow = date.getFullYear();
+    console.log(date, dayNow, month, yearNow);
+    if(event.data.month===month && event.data.day===dayNow && event.data.year===yearNow){
+        $(".add-entry-container").show();
+        var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
+        var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
+        $(add_entry_form).append(add_entry_button)
+        $(".add-entry-container").append(add_entry_form)
+    }
 };
 
 // Event handler for when a month is clicked

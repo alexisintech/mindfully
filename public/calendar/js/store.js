@@ -1,11 +1,10 @@
 // Event handler for when a date is clicked
 function date_click(event) {
-    var today = date.getDate();
-    var day = date.getDay();
-    var month = date.getMonth();
-    var options = { month: 'long' };
-    month = new Intl.DateTimeFormat('en-US', options).format(month);
-    var year = date.getFullYear();
+    let dayNow = date.getDay();
+    let monthNow = date.getMonth();
+    let options = { month: 'long' };
+    monthNow = new Intl.DateTimeFormat('en-US', options).format(month);
+    let yearNow = date.getFullYear();
     
     $(".events-container").show(250);
     // $("#dialog").hide(250);
