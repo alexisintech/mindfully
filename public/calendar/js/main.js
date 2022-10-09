@@ -185,22 +185,19 @@ function show_events(events, month, day) {
         $(event_card).css({ "border-left": "10px solid #FF1744" });
         $(event_card).append(event_name);
         $(".events-container").append(event_card);
+    } else if(events.length===1){
+        var event_card = $("<div class='event-card'></div>");
+        var event_name = $("<div class='event-name'>There is 1 entry for "+month+" "+day+".</div>");
+        $(event_card).css({ "border-left": "10px solid #FF1744" });
+        $(event_card).append(event_name);
+        $(".events-container").append(event_card);
     }
     else {
-        // Go through and add each event as a card to the events container
-        for(var i=0; i<events.length; i++) {
-            var event_card = $("<div class='event-card'></div>");
-            var event_name = $("<div class='event-name'>"+events[i]["occasion"]+":</div>");
-            var event_count = $("<div class='event-count'>"+events[i]["invited_count"]+" Invited</div>");
-            if(events[i]["cancelled"]===true) {
-                $(event_card).css({
-                    "border-left": "10px solid #FF1744"
-                });
-                event_count = $("<div class='event-cancelled'>Cancelled</div>");
-            }
-            $(event_card).append(event_name).append(event_count);
-            $(".events-container").append(event_card);
-        }
+        var event_card = $("<div class='event-card'></div>");
+        var event_name = $("<div class='event-name'>There are "+events.length+" entries for "+month+" "+day+".</div>");
+        $(event_card).css({ "border-left": "10px solid #FF1744" });
+        $(event_card).append(event_name);
+        $(".events-container").append(event_card);
     }
 }
 
