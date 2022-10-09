@@ -11,7 +11,7 @@ const EntrySchema = new mongoose.Schema({
   },
   text: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 

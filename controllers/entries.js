@@ -31,12 +31,13 @@ module.exports = {
       console.log(err);
     }
   },
-  createEntry: async (req, res) => {
+  createBlankEntry: async (req, res) => {
     try {
       await Entry.create({
         user: req.user.id,
-        text: req.body.text,
+        text: req.body.blankTextEntry,
       });
+      console.log(req);
       console.log("Entry has been added!");
       res.redirect("/profile");
     } catch (err) {

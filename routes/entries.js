@@ -8,6 +8,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Entry Routes
 router.get("/:id", ensureAuth, entriesController.getEntry);
 
-router.post("/createEntry", entriesController.createEntry);
+router.post("/createEntry", entriesController.createBlankEntry);
 
 module.exports = router;

@@ -7,5 +7,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Add Entry Routes
 router.get("/blank", ensureAuth, entriesController.getBlank);
+router.post("/blank/createEntry", ensureAuth, entriesController.createBlankEntry);
 
 module.exports = router;
