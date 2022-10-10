@@ -2,6 +2,9 @@
 
 	"use strict";
 
+// userEntries is all of the entries of the current user
+console.log(userEntries);
+
 // Setup the calendar with the current date
 $(document).ready(function(){
     var date = new Date();
@@ -236,17 +239,6 @@ function check_events(day, month, year) {
     }
     return events;
 }
-
-function fetchData() {
-    fetch('/calendarEntries')
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-    })
-}
-
-let userEntries = fetchData()
-console.log(fetchData());
 
 // Given data for events in JSON format
 var event_data = {
