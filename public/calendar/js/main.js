@@ -1,5 +1,3 @@
-var numOfEntries = document.querySelector('#numOfEntries').innerHTML;
-console.log(numOfEntries);
 
 (function($) {
 
@@ -85,7 +83,6 @@ function days_in_month(month, year) {
 
 // Event handler for when a date is clicked
 function date_click(event) {
-    
     
     $(".add-entry-container").empty();
     $(".events-container").show(250);

@@ -3,8 +3,8 @@ const Entry = require("../models/Entry");
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      const entries = await Entry.find({ user: req.user.id });
-      res.render("profile.ejs", { numOfEntries: entries.length });
+      const entries = await Entry.find({ user: req.user.id })
+      res.render("profile.ejs", { entries: entries });
     } catch (err) {
       console.log(err);
     }
@@ -33,16 +33,15 @@ module.exports = {
         var entryMonth = entry.month;
         var entryYear = entry.year;
       }
-      res.render("entry.ejs", { entryText: entryText, entryDay: entryDay, entryMonth: entryMonth, entryYear: entryYea });
+      res.render("entry.ejs", { entryText: entryText, entryDay: entryDay, entryMonth: entryMonth, entryYear: entryYear });
     } catch (err) {
       console.log(err);
     }
   },
-  getCalendarEntry: async (req, res) => {
+  getAllCalEntries: async (req, res) => {
     try {
-      const entry = await Entry.findById(req.params.id);
-      console.log(entry);
-      res.render("entry.ejs", { entry: entry, user: req.user });
+      const entries = await Entry.find({ user: req.user.id })
+      res.send(entries);
     } catch (err) {
       console.log(err);
     }
