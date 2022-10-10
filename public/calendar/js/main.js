@@ -237,6 +237,17 @@ function check_events(day, month, year) {
     return events;
 }
 
+function fetchData() {
+    fetch('/calendarEntries')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
+}
+
+let userEntries = fetchData()
+console.log(fetchData());
+
 // Given data for events in JSON format
 var event_data = {
     "events": [
