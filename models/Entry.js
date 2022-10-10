@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 date = new Date();
-const day = date.getDay();
+const day = date.getDate();
 const month = date.getMonth();
-const options = { month: 'long' }
+const options = { month: 'long' };
 
 const EntrySchema = new mongoose.Schema({
   user: {
@@ -15,12 +15,12 @@ const EntrySchema = new mongoose.Schema({
     default: Date.now,
   },
   day:{
-    type: String,
+    type: Number,
     default: day,
   },
   month:{
     type: String,
-    default: new Intl.DateTimeFormat('en-US', options).format(month),
+    default: new Intl.DateTimeFormat('en-US', options).format(date),
   },
   year:{
     type: Number,

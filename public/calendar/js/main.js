@@ -1,3 +1,6 @@
+var numOfEntries = document.querySelector('#numOfEntries').innerHTML;
+console.log(numOfEntries);
+
 (function($) {
 
 	"use strict";
@@ -82,6 +85,8 @@ function days_in_month(month, year) {
 
 // Event handler for when a date is clicked
 function date_click(event) {
+    
+    
     $(".add-entry-container").empty();
     $(".events-container").show(250);
     // $("#dialog").hide(250);
@@ -182,16 +187,16 @@ function prev_year(event) {
 // }
 
 // Adds a json event to event_data
-function new_event_json(name, count, date, day) {
-    var event = {
-        "id": entry,
-        "user": count,
-        "year": date.getFullYear(),
-        "month": date.getMonth()+1,
-        "day": day
-    };
-    event_data["events"].push(event);
-}
+// function new_event_json(name, count, date, day) {
+//     var event = {
+//         "id": entry,
+//         "user": count,
+//         "year": date.getFullYear(),
+//         "month": date.getMonth()+1,
+//         "day": day
+//     };
+//     event_data["events"].push(event);
+// }
 
 // Display all events of the selected date in card views
 function show_events(events, month, day) {
