@@ -38,10 +38,10 @@ module.exports = {
       console.log(err);
     }
   },
-  getAllCalEntries: async (req, res) => {
+  getCalendarEntries: async (req, res) => {
     try {
       const entries = await Entry.find({ user: req.user.id })
-      res.send(entries);
+      res.json(entries)
     } catch (err) {
       console.log(err);
     }
