@@ -1,0 +1,20 @@
+<%- include('partials/header') -%>
+
+<main class="masthead">
+  <div class="d-flex h-100 align-items-center justify-content-center">
+    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-3">
+      <h2><%= entries[0].monthAsWord %> <%= entries[0].day %>, <%= entries[0].year %></h2>
+      <ul class="list-unstyled">
+        <% for(var i=0; i<entries.length; i++) {%>
+          <li class="justify-content-between mt-5">
+            <a href="#">
+              <p><%= entries[i].monthAsWord %>/<%= entries[i].day %>/<%= entries[i].year %> <%= entries[i].time %></p>
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>

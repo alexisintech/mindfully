@@ -8234,9 +8234,10 @@ h1, h2, h3, h4, h5,
   padding-right: 0;
   text-align: left; }
 
-.entry-button{
+.entry-click{
   cursor:pointer;
   background:transparent;
+  text-decoration: none;
   color:white;
   border:none;
   padding-left: 10px;

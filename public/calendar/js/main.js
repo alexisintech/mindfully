@@ -142,6 +142,16 @@ function show_entries(entries, month, day, year) {
     // Clear the dates container
     $(".entry-container").empty();
     $(".entry-container").show(250);
+    console.log(month);
+    let monthAsNumber;
+    if(month==='October'){
+        monthAsNumber = 10;
+    }
+    console.log(monthAsNumber);
+    let activeDate = `${monthAsNumber}${day}${year}`
+    let activeDateAsNum = Number(activeDate)
+    console.log(activeDate);
+
     // If there are no entries for this date, notify the user
     if(entries.length===0) {
         var entry_card = $("<div class='entry-card'></div>");
@@ -150,22 +160,18 @@ function show_entries(entries, month, day, year) {
         $(entry_card).append(entry_name);
         $(".entry-container").append(entry_card);
     } else if(entries.length===1){
-        var entry_form = $("<form action='/entry/getDateEntries' method='GET'></form>");
         var entry_card = $("<div class='entry-card'></div>");
         $(entry_card).css({ "border-left": "10px solid #FF1744" });
-        $(entry_form).append(entry_card);
-        var entry_button = $("<button class='entry-button'>There is 1 entry for "+month+" "+day+", "+year+".</button>");
-        $(entry_card).append(entry_button);
-        $(".entry-container").append(entry_form);
+        var entry_click = $(`<a href='/entry/${activeDateAsNum}' class='entry-click'>There is 1 entry for ${month} ${day}, ${year}.</a>`);
+        $(entry_card).append(entry_click);
+        $(".entry-container").append(entry_card);
     }
     else {
-        var entry_form = $("<form action='/getEntries' method='GET'></form>");
         var entry_card = $("<div class='entry-card'></div>");
         $(entry_card).css({ "border-left": "10px solid #FF1744" });
-        $(entry_form).append(entry_card);
-        var entry_button = $("<button class='entry-button'>There are "+entries.length+" entries for "+month+" "+day+", "+year+".</button>");
-        $(entry_card).append(entry_button);
-        $(".entry-container").append(entry_form);
+        var entry_click = $(`<a href='/entry/${activeDateAsNum}' class='entry-click'>There are ${entries.length} entries for ${month} ${day}, ${year}.</a>`);
+        $(entry_card).append(entry_click);
+        $(".entry-container").append(entry_card);
     }
 }
 

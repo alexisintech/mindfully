@@ -5,6 +5,9 @@ const day = date.getDate();
 const month = date.getMonth()+1;
 const options = { month: 'long' };
 const year = date.getFullYear();
+const fullDateAsString = `${month}${day}${year}`
+const fullDateAsNum = Number(fullDateAsString)
+const time = `${date.getHours()}:${date.getMinutes()}`
 
 const EntrySchema = new mongoose.Schema({
   user: {
@@ -25,9 +28,21 @@ const EntrySchema = new mongoose.Schema({
     type: Number,
     default: month,
   },
+  monthAsWord:{
+    type: String,
+    default: new Intl.DateTimeFormat('en-US', options).format(date),
+  },
   year:{
     type: Number,
     default: year,
+  },
+  fullDate:{
+    type: Number,
+    default: fullDateAsNum,
+  },
+  time:{
+    type: String,
+    default: time,
   },
   text: {
     type: String,
