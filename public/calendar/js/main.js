@@ -17,8 +17,8 @@ $(document).ready(function(){
     // Set current month as active
     $(".months-row").children().eq(date.getMonth()).addClass("active-month");
     init_calendar(date);
-    var events = check_events(today, date.getMonth()+1, date.getFullYear());
-    show_events(events, months[date.getMonth()], today);
+    var entries = check_entries(today, date.getMonth()+1, date.getFullYear());
+    show_entries(entries, months[date.getMonth()], today);
     $(".add-entry-container").show();
     var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
     var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
@@ -57,17 +57,17 @@ function init_calendar(date) {
         }   
         else {
             var curr_date = $("<td class='table-date'>"+day+"</td>");
-            var events = check_events(day, month+1, year);
+            var entries = check_entries(day, month+1, year);
             if(today===day && $(".active-date").length===0) {
                 curr_date.addClass("active-date");
-                show_events(events, months[month], day);
+                show_entries(entries, months[month], day);
             }
             // If this date has any events, style it with .event-date
-            if(events.length!==0) {
+            if(entries.length!==0) {
                 curr_date.addClass("event-date");
             }
             // Set onClick handler for clicking a date
-            curr_date.click({events: events, month: months[month], day:day, year:year}, date_click);
+            curr_date.click({entries: entries, month: months[month], day:day, year:year}, date_click);
             row.append(curr_date);
         }
     }
@@ -91,8 +91,10 @@ function date_click(event) {
     // $("#dialog").hide(250);
     $(".active-date").removeClass("active-date");
     $(this).addClass("active-date");
-    show_events(event.data.events, event.data.month, event.data.day, event.data.year);
-    console.log(event.data.events, event.data.month, event.data.day, event.data.year);
+    show_entries(event.data.entries, event.data.month, event.data.day, event.data.year);
+    console.log(event.data);
+    console.log(event.data.month);
+    console.log(event.data.entries, event.data.month, event.data.day, event.data.year);
     let date = new Date();
     let dayNow = date.getDate();
     let month = date.getMonth();
@@ -198,19 +200,19 @@ function prev_year(event) {
 // }
 
 // Display all events of the selected date in card views
-function show_events(events, month, day) {
+function show_entries(entries, month, day) {
     // Clear the dates container
     $(".events-container").empty();
     $(".events-container").show(250);
-    console.log(event_data["events"]);
+    console.log(entries);
     // If there are no events for this date, notify the user
-    if(events.length===0) {
+    if(entries.length===0) {
         var event_card = $("<div class='event-card'></div>");
         var event_name = $("<div class='event-name'>There are no entries for "+month+" "+day+".</div>");
         $(event_card).css({ "border-left": "10px solid #FF1744" });
         $(event_card).append(event_name);
         $(".events-container").append(event_card);
-    } else if(events.length===1){
+    } else if(entries.length===1){
         var event_card = $("<div class='event-card'></div>");
         var event_name = $("<div class='event-name'>There is 1 entry for "+month+" "+day+".</div>");
         $(event_card).css({ "border-left": "10px solid #FF1744" });
@@ -226,18 +228,31 @@ function show_events(events, month, day) {
     }
 }
 
-// Checks if a specific date has any events
-function check_events(day, month, year) {
-    var events = [];
-    for(var i=0; i<event_data["events"].length; i++) {
-        var event = event_data["events"][i];
-        if(event["day"]===day &&
-            event["month"]===month &&
-            event["year"]===year) {
-                events.push(event);
+// // Checks if a specific date has any events
+// function check_events(day, month, year) {
+//     var events = [];
+//     for(var i=0; i<event_data["events"].length; i++) {
+//         var event = event_data["events"][i];
+//         if(event["day"]===day &&
+//             event["month"]===month &&
+//             event["year"]===year) {
+//                 events.push(event);
+//             }
+//     }
+//     return events;
+// }
+
+// Checks if a specific date has any entries
+function check_entries(day, month, year) {
+    var entries = [];
+    for(var i=0; i<userEntries.length; i++) {
+        if(userEntries[i]["day"]===day &&
+            userEntries[i]["month"]===month &&
+            userEntries[i]["year"]===year) {
+                entries.push(userEntries[i]);
             }
     }
-    return events;
+    return entries;
 }
 
 // Given data for events in JSON format
