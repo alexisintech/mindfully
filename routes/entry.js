@@ -10,4 +10,6 @@ router.get("/:id", ensureAuth, entriesController.getEntry);
 
 router.post("/createEntry", entriesController.createBlankEntry);
 
+router.get("/getDateEntries", entriesController.getDateEntries);
+
 module.exports = router;

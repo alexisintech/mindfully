@@ -24,6 +24,14 @@ module.exports = {
       console.log(err);
     }
   },
+  getDateEntries: async (req, res) => {
+    try {
+      const entries = await Entry.find({ user: req.user.id })
+      res.render("dateEntries.ejs", {entries: entries})
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getEntry: async (req, res) => {
     try {
       const entry = await Entry.findById(req.params.id);

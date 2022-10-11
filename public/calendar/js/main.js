@@ -9,6 +9,7 @@ console.log(userEntries);
 $(document).ready(function(){
     var date = new Date();
     var today = date.getDate();
+    var year = date.getFullYear();
     // Set click handlers for DOM elements
     $(".right-button").click({date: date}, next_year);
     $(".left-button").click({date: date}, prev_year);
@@ -17,7 +18,7 @@ $(document).ready(function(){
     $(".months-row").children().eq(date.getMonth()).addClass("active-month");
     init_calendar(date);
     var entries = check_entries(today, date.getMonth()+1, date.getFullYear());
-    show_entries(entries, months[date.getMonth()], today);
+    show_entries(entries, months[date.getMonth()], today, year);
     $(".add-entry-container").show();
     var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
     var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
@@ -60,7 +61,7 @@ function init_calendar(date) {
             var entries = check_entries(day, month+1, year);
             if(today===day && $(".active-date").length===0) {
                 curr_date.addClass("active-date");
-                show_entries(entries, months[month], day);
+                show_entries(entries, months[month], day, year);
             }
             // If this date has any entries, style it with .entry-date
             if(entries.length!==0) {
@@ -137,30 +138,34 @@ function prev_year(event) {
 }
 
 // Display all events of the selected date in card views
-function show_entries(entries, month, day) {
+function show_entries(entries, month, day, year) {
     // Clear the dates container
     $(".entry-container").empty();
     $(".entry-container").show(250);
     // If there are no entries for this date, notify the user
     if(entries.length===0) {
         var entry_card = $("<div class='entry-card'></div>");
-        var entry_name = $("<div class='entry-name'>There are no entries for "+month+" "+day+".</div>");
+        var entry_name = $("<div class='entry-name'>There are no entries for "+month+" "+day+", "+year+".</div>");
         $(entry_card).css({ "border-left": "10px solid #FF1744" });
         $(entry_card).append(entry_name);
         $(".entry-container").append(entry_card);
     } else if(entries.length===1){
+        var entry_form = $("<form action='/entry/getDateEntries' method='GET'></form>");
         var entry_card = $("<div class='entry-card'></div>");
-        var entry_name = $("<div class='entry-name'>There is 1 entry for "+month+" "+day+".</div>");
         $(entry_card).css({ "border-left": "10px solid #FF1744" });
-        $(entry_card).append(entry_name);
-        $(".entry-container").append(entry_card);
+        $(entry_form).append(entry_card);
+        var entry_button = $("<button class='entry-button'>There is 1 entry for "+month+" "+day+", "+year+".</button>");
+        $(entry_card).append(entry_button);
+        $(".entry-container").append(entry_form);
     }
     else {
+        var entry_form = $("<form action='/getEntries' method='GET'></form>");
         var entry_card = $("<div class='entry-card'></div>");
-        var entry_name = $("<div class='entry-name'>There are "+entries.length+" entries for "+month+" "+day+".</div>");
         $(entry_card).css({ "border-left": "10px solid #FF1744" });
-        $(entry_card).append(entry_name);
-        $(".entry-container").append(entry_card);
+        $(entry_form).append(entry_card);
+        var entry_button = $("<button class='entry-button'>There are "+entries.length+" entries for "+month+" "+day+", "+year+".</button>");
+        $(entry_card).append(entry_button);
+        $(".entry-container").append(entry_form);
     }
 }
 
