@@ -8189,8 +8189,8 @@ h1, h2, h3, h4, h5,
   margin: 20px auto;
   background: #fc7fb2; }
 
-/*  Events display */
-.events-container {
+/*  Entries display */
+.entry-container {
   overflow-y: scroll;
   /* height: 100%; */
   width: 100%;
@@ -8202,14 +8202,14 @@ h1, h2, h3, h4, h5,
   border-top-right-radius: 3px;
   padding: 0; }
   @media (max-width: 767.98px) {
-    .events-container {
+    .entry-container {
       width: 100%;
       height: auto; } }
 
-.events-container:after {
+.entry-container:after {
   clear: both; }
 
-.event-card {
+.entry-card {
   padding: 20px 0;
   max-width: 100%;
   display: block;
@@ -8221,22 +8221,18 @@ h1, h2, h3, h4, h5,
   border-radius: 4px;
   margin: 0; }
 
-.event-count, .event-name, .event-cancelled {
+.entry-count, .entry-name {
   display: inline;
   padding: 0 10px;
   font-size: 1rem; }
 
-.event-count {
+.entry-count {
   color: #fc7fb2;
   text-align: right; }
 
-.event-name {
+.entry-name {
   padding-right: 0;
   text-align: left; }
-
-.event-cancelled {
-  color: #fc7fb2;
-  text-align: right; }
 
 /*  Calendar wrapper */
 .calendar-container {
@@ -8392,7 +8388,7 @@ h1, h2, h3, h4, h5,
 
 /*  Dates table */
 .table-date {
-  cursor: default;
+  cursor: pointer;
   color: #2b2b2b;
   height: 26px;
   width: 26px;
@@ -8423,11 +8419,11 @@ h1, h2, h3, h4, h5,
     border-radius: 50%;
     z-index: -1; }
 
-.event-date {
+.entry-date {
   border-color: #fc7fb2;
   background: #fc7fb2;
   color: #fff; }
-  .event-date:after {
+  .entry-date:after {
     position: absolute;
     top: 0;
     left: 0;
@@ -8443,7 +8439,7 @@ h1, h2, h3, h4, h5,
   .active-date:before {
     background: #fc7fb2; }
 
-.event-date.active-date {
+.entry-date.active-date {
   background: transparent;
   border: none; }
 

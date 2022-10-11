@@ -13,7 +13,6 @@ $(document).ready(function(){
     $(".right-button").click({date: date}, next_year);
     $(".left-button").click({date: date}, prev_year);
     $(".month").click({date: date}, month_click);
-    // $("#add-button").click({date: date}, new_event);
     // Set current month as active
     $(".months-row").children().eq(date.getMonth()).addClass("active-month");
     init_calendar(date);
@@ -29,7 +28,7 @@ $(document).ready(function(){
 // Initialize the calendar by appending the HTML dates
 function init_calendar(date) {
     $(".tbody").empty();
-    $(".events-container").empty();
+    $(".entry-container").empty();
     $(".add-entry-container").empty();
     var calendar_days = $(".tbody");
     var month = date.getMonth();
@@ -53,7 +52,7 @@ function init_calendar(date) {
         }
         // if current index isn't a day in this month, make it blank
         if(i < first_day || day > day_count) {
-            var curr_date = $("<td class='table-date nil'>"+"</td>");
+            var curr_date = $("<td class='table-date nil' style='cursor:default;'>"+"</td>");
             row.append(curr_date);
         }   
         else {
@@ -63,9 +62,9 @@ function init_calendar(date) {
                 curr_date.addClass("active-date");
                 show_entries(entries, months[month], day);
             }
-            // If this date has any events, style it with .event-date
+            // If this date has any entries, style it with .entry-date
             if(entries.length!==0) {
-                curr_date.addClass("event-date");
+                curr_date.addClass("entry-date");
             }
             // Set onClick handler for clicking a date
             curr_date.click({entries: entries, month: months[month], day:day, year:year}, date_click);
@@ -86,10 +85,8 @@ function days_in_month(month, year) {
 
 // Event handler for when a date is clicked
 function date_click(event) {
-    
     $(".add-entry-container").empty();
-    $(".events-container").show(250);
-    // $("#dialog").hide(250);
+    $(".entry-container").show(250);
     $(".active-date").removeClass("active-date");
     $(this).addClass("active-date");
     show_entries(event.data.entries, event.data.month, event.data.day, event.data.year);
@@ -111,9 +108,8 @@ function date_click(event) {
 
 // Event handler for when a month is clicked
 function month_click(event) {
-    $(".events-container").show(250);
+    $(".entry-container").show(250);
     $(".add-entry-container").empty();
-    $("#dialog").hide(250);
     var date = event.data.date;
     $(".active-month").removeClass("active-month");
     $(this).addClass("active-month");
@@ -124,7 +120,6 @@ function month_click(event) {
 
 // Event handler for when the year right-button is clicked
 function next_year(event) {
-    $("#dialog").hide(250);
     var date = event.data.date;
     var new_year = date.getFullYear()+1;
     $("year").html(new_year);
@@ -134,7 +129,6 @@ function next_year(event) {
 
 // Event handler for when the year left-button is clicked
 function prev_year(event) {
-    $("#dialog").hide(250);
     var date = event.data.date;
     var new_year = date.getFullYear()-1;
     $("year").html(new_year);
@@ -145,28 +139,28 @@ function prev_year(event) {
 // Display all events of the selected date in card views
 function show_entries(entries, month, day) {
     // Clear the dates container
-    $(".events-container").empty();
-    $(".events-container").show(250);
-    // If there are no events for this date, notify the user
+    $(".entry-container").empty();
+    $(".entry-container").show(250);
+    // If there are no entries for this date, notify the user
     if(entries.length===0) {
-        var event_card = $("<div class='event-card'></div>");
-        var event_name = $("<div class='event-name'>There are no entries for "+month+" "+day+".</div>");
-        $(event_card).css({ "border-left": "10px solid #FF1744" });
-        $(event_card).append(event_name);
-        $(".events-container").append(event_card);
+        var entry_card = $("<div class='entry-card'></div>");
+        var entry_name = $("<div class='entry-name'>There are no entries for "+month+" "+day+".</div>");
+        $(entry_card).css({ "border-left": "10px solid #FF1744" });
+        $(entry_card).append(entry_name);
+        $(".entry-container").append(entry_card);
     } else if(entries.length===1){
-        var event_card = $("<div class='event-card'></div>");
-        var event_name = $("<div class='event-name'>There is 1 entry for "+month+" "+day+".</div>");
-        $(event_card).css({ "border-left": "10px solid #FF1744" });
-        $(event_card).append(event_name);
-        $(".events-container").append(event_card);
+        var entry_card = $("<div class='entry-card'></div>");
+        var entry_name = $("<div class='entry-name'>There is 1 entry for "+month+" "+day+".</div>");
+        $(entry_card).css({ "border-left": "10px solid #FF1744" });
+        $(entry_card).append(entry_name);
+        $(".entry-container").append(entry_card);
     }
     else {
-        var event_card = $("<div class='event-card'></div>");
-        var event_name = $("<div class='event-name'>There are "+events.length+" entries for "+month+" "+day+".</div>");
-        $(event_card).css({ "border-left": "10px solid #FF1744" });
-        $(event_card).append(event_name);
-        $(".events-container").append(event_card);
+        var entry_card = $("<div class='entry-card'></div>");
+        var entry_name = $("<div class='entry-name'>There are "+entries.length+" entries for "+month+" "+day+".</div>");
+        $(entry_card).css({ "border-left": "10px solid #FF1744" });
+        $(entry_card).append(entry_name);
+        $(".entry-container").append(entry_card);
     }
 }
 
