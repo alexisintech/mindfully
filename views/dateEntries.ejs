@@ -7,7 +7,7 @@
       <ul class="list-unstyled">
         <% for(var i=0; i<entries.length; i++) {%>
           <li class="justify-content-between mt-5">
-            <a href="#">
+            <a href="/entry/<%= entries[i]._id%>">
               <p><%= entries[i].monthAsWord %>/<%= entries[i].day %>/<%= entries[i].year %> <%= entries[i].time %></p>
             </a>
           </li>
@@ -16,5 +16,7 @@
     </div>
   </div>
 </main>
+
+<% console.log(entries[0]._id) %>
 
 <%- include('partials/footer') -%>

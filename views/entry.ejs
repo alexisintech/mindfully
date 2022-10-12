@@ -1,0 +1,12 @@
+<%- include('partials/header') -%>
+
+<main class="masthead">
+  <div class="d-flex h-100 align-items-center justify-content-center">
+    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-3">
+      <h2><%= entry.monthAsWord %> <%= entry.day %>, <%= entry.year %> <%= entry.time %></h2>
+      <p><%= entry.text %></p>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>

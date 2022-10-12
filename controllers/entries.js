@@ -31,20 +31,15 @@ module.exports = {
       console.log(err);
     }
   },
-  // getEntry: async (req, res) => {
-  //   try {
-  //     const entries = await Entry.findById(req.params.id);
-  //     for(let entry of entries){
-  //       var entryText = entry.text;
-  //       var entryDay = entry.day;
-  //       var entryMonth = entry.month;
-  //       var entryYear = entry.year;
-  //     }
-  //     res.render("entry.ejs", { entryText: entryText, entryDay: entryDay, entryMonth: entryMonth, entryYear: entryYear });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
+  getEntry: async (req, res) => {
+    try {
+      console.log(req.params);
+      const entry = await Entry.findById(req.params.id);
+      res.render("entry.ejs", { entry: entry });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getCalendarEntries: async (req, res) => {
     try {
       const entries = await Entry.find({ user: req.user.id })
