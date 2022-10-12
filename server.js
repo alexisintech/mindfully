@@ -11,6 +11,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const entryRoutes = require("./routes/entry");
 const addEntryRoutes = require("./routes/addEntry");
+const settingsRoutes = require("./routes/settings");
 
 // Telling express to use our environment variables - use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -59,6 +60,7 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/entry", entryRoutes);
 app.use("/addEntry", addEntryRoutes);
+app.use("/settings", settingsRoutes);
 
 // Server Running
 app.listen(process.env.PORT, () => {
