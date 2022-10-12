@@ -5,7 +5,7 @@ const homeController = require("../controllers/home");
 const entriesController = require("../controllers/entries");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Entry Routes
+// /entry Routes
 router.get("/:id", ensureAuth, entriesController.getEntry);
 
 router.post("/createEntry", entriesController.createBlankEntry);

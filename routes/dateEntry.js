@@ -5,9 +5,8 @@ const homeController = require("../controllers/home");
 const entriesController = require("../controllers/entries");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-// /addEntry Routes
+// /dateEntry routes
 
-router.get("/blank", ensureAuth, entriesController.getBlank);
-router.post("/blank/createEntry", ensureAuth, entriesController.createBlankEntry);
+router.get("/:date", entriesController.getDateEntries); // Get an entry for a specific date
 
 module.exports = router;

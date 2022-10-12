@@ -11,6 +11,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const entryRoutes = require("./routes/entry");
 const addEntryRoutes = require("./routes/addEntry");
+const dateEntryRoutes = require("./routes/dateEntry");
 const settingsRoutes = require("./routes/settings");
 
 // Telling express to use our environment variables - use .env file in config folder
@@ -60,6 +61,7 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/entry", entryRoutes);
 app.use("/addEntry", addEntryRoutes);
+app.use("/dateEntry", dateEntryRoutes);
 app.use("/settings", settingsRoutes);
 
 // Server Running
