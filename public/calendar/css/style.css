@@ -8191,7 +8191,6 @@ h1, h2, h3, h4, h5,
 
 /*  Entries display */
 .entry-container {
-  overflow-y: scroll;
   /* height: 100%; */
   width: 100%;
   float: left;

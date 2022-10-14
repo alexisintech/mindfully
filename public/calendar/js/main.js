@@ -162,14 +162,14 @@ function show_entries(entries, month, day, year) {
     } else if(entries.length===1){
         var entry_card = $("<div class='entry-card'></div>");
         $(entry_card).css({ "border-left": "10px solid #FF1744" });
-        var entry_click = $(`<a href='/${activeDateAsNum}' class='entry-click'>There is 1 entry for ${month} ${day}, ${year}.</a>`);
+        var entry_click = $(`<a href='/dateEntry/${activeDateAsNum}' class='entry-click'>There is 1 entry for ${month} ${day}, ${year}.</a>`);
         $(entry_card).append(entry_click);
         $(".entry-container").append(entry_card);
     }
     else {
         var entry_card = $("<div class='entry-card'></div>");
         $(entry_card).css({ "border-left": "10px solid #FF1744" });
-        var entry_click = $(`<a href='/${activeDateAsNum}' class='entry-click'>There are ${entries.length} entries for ${month} ${day}, ${year}.</a>`);
+        var entry_click = $(`<a href='/dateEntry/${activeDateAsNum}' class='entry-click'>There are ${entries.length} entries for ${month} ${day}, ${year}.</a>`);
         $(entry_card).append(entry_click);
         $(".entry-container").append(entry_card);
     }

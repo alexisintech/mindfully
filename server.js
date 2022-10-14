@@ -13,6 +13,7 @@ const entryRoutes = require("./routes/entry");
 const addEntryRoutes = require("./routes/addEntry");
 const dateEntryRoutes = require("./routes/dateEntry");
 const settingsRoutes = require("./routes/settings");
+const promptsRoutes = require("./routes/prompts");
 
 // Telling express to use our environment variables - use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -63,6 +64,11 @@ app.use("/entry", entryRoutes);
 app.use("/addEntry", addEntryRoutes);
 app.use("/dateEntry", dateEntryRoutes);
 app.use("/settings", settingsRoutes);
+app.use("/prompts", promptsRoutes);
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get('*', function(req, res){
+  res.render("404.ejs");
+});
 
 // Server Running
 app.listen(process.env.PORT, () => {

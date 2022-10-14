@@ -1,0 +1,19 @@
+<ul class="list-unstyled">
+    <% for(var i=0; i<forYouPrompts.length; i++) {%>
+      <li class="justify-content-between mt-5">
+        <a href="/settings/prompts/<%= prompts[i]._id%>">
+          <p><%= prompts[i].text %></p>
+        </a>
+      </li>
+    <% } %>
+  </ul>
+  <p>by you (for now)</p>
+  <ul class="list-unstyled">
+    <% for(var i=0; i<byYouPrompts.length; i++) {%>
+      <li class="justify-content-between mt-5">
+        <a href="/settings/prompts/<%= prompts[i]._id%>">
+          <p><%= prompts[i].text %></p>
+        </a>
+      </li>
+    <% } %>
+  </ul>

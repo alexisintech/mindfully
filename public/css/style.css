@@ -59,3 +59,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
     box-shadow: -10px 10px 15px 2px rgba(229, 103, 23, 0.075) inset, 0 0 30px 5px rgba(38, 104, 179, 0.6) !important;
     outline: 0 none !important;
 }
+
+#promptTextEntry{
+    padding: 0.8rem 1rem;
+}

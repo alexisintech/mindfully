@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const entriesController = require("../controllers/entries");
+const promptsController = require("../controllers/prompts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-// /entry Routes
-router.get("/:id", ensureAuth, entriesController.getEntry);
+// /prompts Routes
 
-router.post("/createEntry", entriesController.createBlankEntry);
+router.post("/createPrompt", ensureAuth, promptsController.createPrompt);
+
+module.exports = router;
 
 module.exports = router;

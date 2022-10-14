@@ -25,8 +25,16 @@ module.exports = {
   },
   getDateEntries: async (req, res) => {
     try {
-      const entries = await Entry.find({ fullDate: req.params.date })
-      res.render("dateEntries.ejs", {entries: entries})
+      const entries = await Entry.find({ user: req.user.id })
+      let dateEntries = [];
+      for(let entry of entries){
+        if(entry.fullDate == req.params.date){
+          dateEntries.push(entry)
+        }
+      }
+      if(dateEntries.length > 0){
+        res.render("dateEntries.ejs", {entries: dateEntries})
+      } else{res.render("nonefound.ejs")}
     } catch (err) {
       console.log(err);
     }
@@ -41,7 +49,6 @@ module.exports = {
   },
   getAllEntries: async (req, res) => {
     try {
-      console.log(req.user);
       const entries = await Entry.find({ user: req.user.id })
       res.render("allEntries.ejs", { entries: entries, username: req.user.userName });
     } catch (err) {

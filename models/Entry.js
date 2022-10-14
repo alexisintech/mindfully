@@ -44,9 +44,13 @@ const EntrySchema = new mongoose.Schema({
     type: String,
     default: time,
   },
-  text: {
+  prompt: {
     type: String,
     required: false,
+  },
+  text: {
+    type: String,
+    required: true,
   },
 });
 
