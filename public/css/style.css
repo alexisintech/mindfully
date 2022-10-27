@@ -1,5 +1,28 @@
+:root {
+    --title-color: rgb(8, 50, 73);
+    --main-color: rgb(107, 189, 233);
+}
+
+*
+{ box-sizing: border-box; }
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(8, 50, 73, 0.7) !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
 .site-title{
     font-size:2rem;
+}
+
+#index-title{
+    color: var(--title-color);
+    margin-top: 2rem;
 }
 
 #guest-site-title{
@@ -15,13 +38,18 @@
 }
 
 .masthead {
-    height: 100vh;
+    height: 100%;
     min-height: 100vh;
-    padding-top:60px;
-    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    padding: 5rem 0;
+    background-image: url("/imgs/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+#index.masthead {
+    height: calc(100vh - 64px);
+    padding:0;
 }
 
 .glass-card{

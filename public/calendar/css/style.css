@@ -2,9 +2,13 @@
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/twbs/bootstraproot/blob/master/LICENSE)
  */
 :root {
+  --title-color: rgb(8, 50, 73);
+  --secondary-color: rgb(178, 211, 228);
+  --light-secondary-color: rgb(202, 232, 248);
+  --dark-accent-color: rgb(1, 82, 133);
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -18,7 +22,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #007bff;
+  --primary: rgb(107, 189, 233);
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -133,11 +137,11 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: var(--main-color);
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #0056b3;
+    color: var(--dark-accent-color);
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -8144,7 +8148,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #fc7fb2; }
+  color: var(--light-secondary-color); }
   a:hover, a:focus {
     text-decoration: none !important;
     outline: none !important;
@@ -8159,7 +8163,7 @@ h1, h2, h3, h4, h5,
   color: #000; }
 
 .bg-primary {
-  background: #fc7fb2 !important; }
+  background: var(--light-secondary-color) !important; }
 
 /* .ftco-section {
   padding: 7em 0; } */
@@ -8187,7 +8191,7 @@ h1, h2, h3, h4, h5,
   height: 500px;
   position: relative;
   margin: 20px auto;
-  background: #fc7fb2; }
+  background: var(--light-secondary-color); }
 
 /*  Entries display */
 .entry-container {
@@ -8212,7 +8216,7 @@ h1, h2, h3, h4, h5,
   padding: 20px 0;
   max-width: 100%;
   display: block;
-  background: #fc7fb2;
+  background: var(--secondary-color);
   border: none !important;
   margin: 20px;
   color: #fff;
@@ -8226,7 +8230,7 @@ h1, h2, h3, h4, h5,
   font-size: 1rem; }
 
 .entry-count {
-  color: #fc7fb2;
+  color: var(--light-secondary-color);
   text-align: right; }
 
 .entry-name {
@@ -8300,7 +8304,7 @@ h1, h2, h3, h4, h5,
       -o-transition: none;
       transition: none; } }
   .left-button:hover, .right-button:hover {
-    color: #fc7fb2 !important; }
+    color: var(--light-secondary-color) !important; }
 
 .left-button {
   left: 0; }
@@ -8324,7 +8328,7 @@ h1, h2, h3, h4, h5,
   transition: .2s ease all;
   color: white;
   border: none;
-  background: #fc7fb2; }
+  background: var(--light-secondary-color); }
   .button.button-white {
     background: #fff;
     color: #000; }
@@ -8389,10 +8393,10 @@ h1, h2, h3, h4, h5,
 
 .active-month {
   font-weight: 700;
-  color: #fc7fb2; }
+  color: var(--light-secondary-color); }
 
 .month:hover {
-  color: #fc7fb2; }
+  color: var(--light-secondary-color); }
 
 /*  Dates table */
 .table-date {
@@ -8428,8 +8432,8 @@ h1, h2, h3, h4, h5,
     z-index: -1; }
 
 .entry-date {
-  border-color: #fc7fb2;
-  background: #fc7fb2;
+  border-color: var(--light-secondary-color);
+  background: var(--light-secondary-color);
   color: #fff; }
   .entry-date:after {
     position: absolute;
@@ -8439,13 +8443,13 @@ h1, h2, h3, h4, h5,
     height: 10px;
     border-radius: 50%;
     content: '';
-    background: #ffc107;
+    background: #378C7E;
     border: 1px solid white; }
 
 .active-date {
   color: #fff; }
   .active-date:before {
-    background: #fc7fb2; }
+    background: var(--light-secondary-color); }
 
 .entry-date.active-date {
   background: transparent;
@@ -8454,7 +8458,7 @@ h1, h2, h3, h4, h5,
 /* input dialog */
 .dialog {
   z-index: 5;
-  background: #fc7fb2;
+  background: var(--light-secondary-color);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -8501,4 +8505,4 @@ h1, h2, h3, h4, h5,
   border-color: #fff; }
 
 .error-input {
-  border-color: #fc7fb2; }
+  border-color: var(--light-secondary-color); }
