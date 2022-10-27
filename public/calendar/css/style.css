@@ -5401,7 +5401,7 @@ button.bg-danger:focus {
   background-color: #bd2130 !important; }
 
 .bg-light {
-  background-color: #f8f9fa !important; }
+  background-color: rgba(255, 255, 255, 0.3); }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
