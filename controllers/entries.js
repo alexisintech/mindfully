@@ -4,7 +4,9 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const entries = await Entry.find({ user: req.user.id })
-      res.render("profile.ejs", { entries: entries });
+      var date = new Date();
+	    var currentTime = `${date.getHours()}:${date.getMinutes()}`
+      res.render("profile.ejs", { entries: entries, currentTime: currentTime });
     } catch (err) {
       console.log(err);
     }

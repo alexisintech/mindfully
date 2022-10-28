@@ -4,6 +4,7 @@
   <div class="d-flex h-100 align-items-center justify-content-center">
     <div class="w-50 d-flex flex-column align-items-center justify-content-center">
 	  <div class="container user-info-container glass-card justify-content-center align-items-center text-center">
+		<p>Good evening <%- currentTime %></p>
 	  	<p class="todaysDate mt-2"></p>
 		<div class="streak-container d-flex justify-content-center">
 			<div class="streak-section">
@@ -85,8 +86,8 @@
 </main>
 
 <script>
-      var userEntries = <%- JSON.stringify(entries) %>
-    </script>
+    var userEntries = <%- JSON.stringify(entries) %>
+</script>
 <script src="/calendar/js/jquery.min.js"></script>
 <script src="/calendar/js/popper.js"></script>
 <script src="/calendar/js/bootstrap.min.js"></script>
