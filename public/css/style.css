@@ -1,5 +1,5 @@
 :root {
-  --title-color: rgb(8, 50, 73);
+  --title-color: rgb(0, 45, 68);
   --main-color: rgb(107, 189, 233);
 }
 
@@ -8,18 +8,24 @@
 
 body {
   background: rgb(238,250,255);
-background: linear-gradient(130deg, rgba(238,250,255,1) 0%, rgba(237,250,255,1) 14%, rgba(217,238,247,1) 20%, rgba(203,232,247,1) 29%, rgba(191,228,247,1) 47%, rgba(181,224,247,1) 63%, rgba(169,219,245,1) 83%, rgba(150,206,235,1) 100%);
+  background: linear-gradient(130deg, rgba(238,250,255,1) 0%, rgba(237,250,255,1) 3%, rgba(217,238,247,1) 8%, rgba(203,232,247,1) 20%, rgba(191,228,247,1) 30%, rgba(181,224,247,1) 60%, rgba(169,219,245,1) 83%, rgb(143, 199, 226) 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main{
+  height:90vh;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgb(8, 50, 73, 0.7) !important;
+  color: rgb(0, 45, 68, 0.7) !important;
 }
 
 .navbar-bg {
-  background-color: rgb(248, 249, 250, 0.7) !important;
+  background-color: rgb(248, 249, 250, 0.4) !important;
 }
 
 .btn-primary {
@@ -30,11 +36,11 @@ background: linear-gradient(130deg, rgba(238,250,255,1) 0%, rgba(237,250,255,1) 
 
 .site-title{
   font-size:2rem;
+  color: var(--title-color);
 }
 
 #index-title{
   color: var(--title-color);
-  margin-top: 2rem;
 }
 
 #guest-site-title{
@@ -50,18 +56,21 @@ background: linear-gradient(130deg, rgba(238,250,255,1) 0%, rgba(237,250,255,1) 
 }
 
 .masthead {
-  height: 100%;
-  min-height: 100vh;
-  padding: 5rem 0;
+  min-height: 90vh;
 }
 
-#index.masthead {
-  height: calc(100vh - 64px);
-  padding:0;
+.index-glass-card{
+  width: 70%;
+  background: rgb(199, 231, 247, 0.4);
+  box-shadow: 0 8px 26px 0 rgba(66, 64, 62, 0.2);
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.1);
 }
 
 .glass-card{
-  background: rgba( 255, 255, 255, 0.3 );
+  background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 26px 0 rgba(66, 64, 62, 0.37);
   backdrop-filter: blur( 5px );
   -webkit-backdrop-filter: blur( 5px );
