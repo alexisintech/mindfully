@@ -1,6 +1,7 @@
 :root {
   --accent: rgb(140, 57, 224);
   --main: rgb(89, 183, 234);
+  --dark: rgb(6, 8, 61);
   color: white;
 }
 
@@ -11,7 +12,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: white;
-  background: #06083d;
+  background: var(--dark);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -167,6 +168,19 @@ main{
 
 #flame-icon{
   width:70%;
+}
+
+.calendar-card{
+  background: rgb(6, 8, 61, 0.8);
+  box-shadow: 0 8px 26px 0 rgba(66, 64, 62, 0.37);
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.calendar-card .row {
+  margin-bottom: 20px;
 }
 
 .glass-card{

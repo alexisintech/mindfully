@@ -8190,8 +8190,7 @@ h1, h2, h3, h4, h5,
   padding: 0px 0;
   height: 500px;
   position: relative;
-  margin: 20px auto;
-  background: var(--light-secondary-color); }
+  margin: 20px auto; }
 
 /*  Entries display */
 .entry-container {
@@ -8221,7 +8220,8 @@ h1, h2, h3, h4, h5,
   margin: 20px;
   color: #fff;
   margin-left: 12px;
-  border-radius: 4px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   margin: 0; }
 
 .entry-count, .entry-name {
@@ -8252,7 +8252,9 @@ h1, h2, h3, h4, h5,
   margin: 0 auto;
   height: 100%;
   width: 100%;
-  background: #fff;
+  background: rgb(255, 255, 255);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   font: 13px Helvetica, Arial, san-serif;
   display: inline-block;
   padding: 20px;
