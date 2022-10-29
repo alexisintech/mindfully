@@ -6,7 +6,8 @@ module.exports = {
       const entries = await Entry.find({ user: req.user.id })
       var date = new Date();
 	    var currentTime = `${date.getHours()}:${date.getMinutes()}`
-      res.render("profile.ejs", { entries: entries, currentTime: currentTime });
+      var currentHour = date.getHours()
+      res.render("profile.ejs", { entries: entries, username: req.user.userName, currentTime: currentTime, currentHour: currentHour });
     } catch (err) {
       console.log(err);
     }

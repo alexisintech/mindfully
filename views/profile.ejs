@@ -1,11 +1,19 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center">
+  <div class="d-flex h-100 align-items-center justify-content-center mt-5">
     <div class="w-50 d-flex flex-column align-items-center justify-content-center">
 	  <div class="container user-info-container glass-card justify-content-center align-items-center text-center">
-		<p>Good evening <%- currentTime %></p>
-	  	<p class="todaysDate mt-2"></p>
+		<p class="mb-2">Welcome, <%- username %></p>
+		<% if (currentHour >=20 || currentHour == 00 || currentHour < 5) { %>
+			<p class="greeting">Get some sleep!</p>
+		<% } else if (currentHour >=5 && currentHour < 11) { %>
+			<p class="greeting">Good morning</p>
+		<% } else if (currentHour >= 11 && currentHour < 16) { %>
+			<p class="greeting">Good afternoon</p>
+		<% } else { %>
+			<p class="greeting">Good evening</p>
+		<% } %>
 		<div class="streak-container d-flex justify-content-center">
 			<div class="streak-section">
 				<p>number</p>
@@ -14,7 +22,7 @@
 			</div>
 			<div class="streak-section streak-section-middle">
 				<img src="/imgs/flame7ffdd9.png" id="flame-icon" alt="">
-				<p>Current Streak</p>
+				<p class="mt-3">Current Streak</p>
 				<p>Date - Date</p>
 			</div>
 			<div class="streak-section">

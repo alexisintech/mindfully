@@ -3442,7 +3442,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.5rem 1rem; }
+  padding: 1.5rem 1rem 0.5rem 1rem; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: -webkit-box;

@@ -5,7 +5,7 @@
     <div class="h-100 d-flex justify-content-center align-items-center">
       <div class="login-card index-glass-card text-center d-flex flex-column justify-content-center align-items-center">
         <h1 class="text-center">Login</h1>
-        <section class="col-7 mt-4">
+        <section class="login-info mt-4">
           <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
           <div class="alert alert-danger"><%= el.msg %></div>
           <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -34,7 +34,8 @@
                 name="password"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary mt-2 mb-2">Login</button>
+            <p class="mb-3">Don't have an account? <a href="/signup">Sign up</a> </p>
           </form>
         </section>
       </div>
