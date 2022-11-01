@@ -6,8 +6,8 @@
  */
 :root {
   --title-color: rgb(8, 50, 73);
-  --secondary-color: rgb(178, 211, 228);
-  --light-secondary-color: rgb(202, 232, 248);
+  --second-accent: rgb(127, 253, 217);
+  --light-secondary-color: rgb(94, 121, 200);
   --dark-accent-color: rgb(1, 82, 133);
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8215,7 +8215,7 @@ h1, h2, h3, h4, h5,
   padding: 20px 0;
   max-width: 100%;
   display: block;
-  background: var(--secondary-color);
+  background: var(--light-secondary-color);
   border: none !important;
   margin: 20px;
   color: #fff;
@@ -8445,8 +8445,13 @@ h1, h2, h3, h4, h5,
     height: 10px;
     border-radius: 50%;
     content: '';
-    background: #378C7E;
+    background: var(--accent);
     border: 1px solid white; }
+
+.todays-date {
+  color: #fff; }
+.todays-date:before {
+  background: rgb(94, 121, 200, 0.7) }
 
 .active-date {
   color: #fff; }

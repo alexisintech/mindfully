@@ -60,6 +60,7 @@ function init_calendar(date) {
             var curr_date = $("<td class='table-date'>"+day+"</td>");
             var entries = check_entries(day, month+1, year);
             if(today===day && $(".active-date").length===0) {
+                curr_date.addClass("todays-date");
                 curr_date.addClass("active-date");
                 show_entries(entries, months[month], day, year);
             }
