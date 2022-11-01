@@ -3,10 +3,10 @@
 <main class="masthead">
   <div class="d-flex h-100 align-items-center justify-content-center">
     <div class="h-100 w-50 d-flex flex-column align-items-left justify-content-center gap-3">
-      <h2>Mind dump:</h2>
-      <form action="/addEntry/blank/createEntry" method="POST" class="d-flex flex-column">
+      <form action="/settings/prompts/createEntry" method="POST" class="d-flex flex-column">
+        <h2 id="prompt"><%= prompt.text %></h2>
         <div class="">
-            <textarea id="blankTextEntry" name="blankTextEntry" class="form-control z-depth-1 textarea-shadow p-4" rows="18" placeholder="Write without judgement..."></textarea>
+            <textarea id="promptTextEntry" name="promptTextEntry" class="form-control z-depth-1 textarea-shadow p-4" rows="18" placeholder="Write without judgement..."></textarea>
         </div>
         <button type="submit" class="align-self-end mt-4">Release</button>
       </form>

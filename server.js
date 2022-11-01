@@ -9,8 +9,11 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
-const entriesRoutes = require("./routes/entries");
+const entryRoutes = require("./routes/entry");
 const addEntryRoutes = require("./routes/addEntry");
+const dateEntryRoutes = require("./routes/dateEntry");
+const settingsRoutes = require("./routes/settings");
+const promptsRoutes = require("./routes/prompts");
 
 // Telling express to use our environment variables - use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -57,8 +60,15 @@ app.use(flash());
 
 // Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
-app.use("/entry", entriesRoutes);
+app.use("/entry", entryRoutes);
 app.use("/addEntry", addEntryRoutes);
+app.use("/dateEntry", dateEntryRoutes);
+app.use("/settings", settingsRoutes);
+app.use("/prompts", promptsRoutes);
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get('*', function(req, res){
+  res.render("404.ejs");
+});
 
 // Server Running
 app.listen(process.env.PORT, () => {
