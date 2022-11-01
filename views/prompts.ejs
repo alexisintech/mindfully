@@ -1,26 +1,29 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center">
-    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-3">
-      <h2><%= username %>'s prompts</h2>
-      <div class="d-flex w-50 justify-content-between">
-        <form action="/settings/prompts" method="GET">
-          <button>All</button>
-        </form>
-        <form action="/settings/prompts/foryou" method="GET">
-          <button>For You</button>
-        </form>
-        <form action="/settings/prompts/byyou" method="GET">
-          <button>By You</button>
-        </form>
+  <div class="d-flex h-100 align-items-center justify-content-center mt-5">
+    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-5">
+      <div class="container nav-options-container glass-card justify-content-center align-items-center text-center">
+        <h2><%= username %>'s prompts</h2>
+        <div class="d-flex w-50 justify-content-between">
+          <button class="button">All</button>
+          <button class="button">For You</button>
+          <button class="button">By You</button>
+        </div>
       </div>
       <p>all for now</p>
       <ul class="list-unstyled">
-        <% for(var i=0; i<prompts.length; i++) {%>
+        <% for(var i=0; i<forYouPrompts.length; i++) {%>
           <li class="justify-content-between mt-5">
-            <a href="/settings/prompts/<%= prompts[i]._id%>">
-              <p><%= prompts[i].text %></p>
+            <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
+              <p><%= forYouPrompts[i].text %></p>
+            </a>
+          </li>
+        <% } %>
+        <% for(var i=0; i<byYouPrompts.length; i++) {%>
+          <li class="justify-content-between mt-5">
+            <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
+              <p><%= byYouPrompts[i].text %></p>
             </a>
           </li>
         <% } %>
