@@ -9,10 +9,6 @@ router.get("/entries", ensureAuth, entriesController.getAllEntries);
 
 router.get("/prompts", ensureAuth, promptsController.getAllPrompts);
 
-// router.get("/prompts/foryou", ensureAuth, promptsController.getForYouPrompts);
-
-// router.get("/prompts/byyou", ensureAuth, promptsController.getByYouPrompts);
-
 router.get("/prompts/:id", ensureAuth, promptsController.getPrompt);
 
 router.post("/prompts/createEntry", ensureAuth, promptsController.createPromptEntry);

@@ -4,8 +4,9 @@ const Entry = require("../models/Entry");
 module.exports = {
   getAllPrompts: async (req, res) => {
     try {
-        const prompts = await Prompt.find()
-        res.render("prompts.ejs", { prompts: prompts, username: req.user.userName });
+        const byYouPrompts = await Prompt.find({ user: req.user.id })
+        const forYouPrompts = await Prompt.find( {user: '000000000000000000000001'} );
+        res.render("prompts.ejs", { forYouPrompts: forYouPrompts, byYouPrompts: byYouPrompts, username: req.user.userName });
     } catch (err) {
       console.log(err);
     }
@@ -22,24 +23,6 @@ module.exports = {
       console.log(err);
     }
   },
-//   getForYouPrompts: async (req, res) => {
-//     try {
-//       const forYouPrompts = await Prompt.find( {user: 000000000000000000000001} );
-//       res.render("prompts.ejs", { forYouPrompts: forYouPrompts });
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   },
-//   getByYouPrompts: async (req, res) => {
-//     try {
-//       const byYouPrompts = await Prompt.find({ user: req.user.id })
-//       if(byYouPrompts.length > 0){
-//         res.render("prompts.ejs", { byYouPrompts: byYouPrompts });
-//       } else{res.render("prompts.ejs")}
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   },
   getPrompt: async (req, res) => {
     try {
         const prompt = await Prompt.findById(req.params.id);

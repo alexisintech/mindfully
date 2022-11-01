@@ -29,8 +29,25 @@
         <% } %>
       </ul>
       <p>for you (for now)</p>
+      <ul class="list-unstyled">
+        <% for(var i=0; i<forYouPrompts.length; i++) {%>
+          <li class="justify-content-between mt-5">
+            <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
+              <p><%= forYouPrompts[i].text %></p>
+            </a>
+          </li>
+        <% } %>
+      </ul>
       
       <p>by you (for now)</p>
+        <% for(var i=0; i<byYouPrompts.length; i++) {%>
+          <li class="justify-content-between mt-5">
+            <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
+              <p><%= byYouPrompts[i].text %></p>
+            </a>
+          </li>
+        <% } %>
+      </ul>
       
       </ul>
       <form action="/prompts/createPrompt" method="POST" class="w-50 d-flex flex-column">
