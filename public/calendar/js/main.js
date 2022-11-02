@@ -21,7 +21,7 @@ $(document).ready(function(){
     show_entries(entries, months[date.getMonth()], today, year);
     $(".add-entry-container").show();
     var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
-    var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
+    var add_entry_button = $("<button class='button-15' id='add-button'>Add Entry</button>");
     $(add_entry_form).append(add_entry_button)
     $(".add-entry-container").append(add_entry_form)
 });
@@ -102,7 +102,7 @@ function date_click(event) {
     if(event.data.month===month && event.data.day===dayNow && event.data.year===yearNow){
         $(".add-entry-container").show();
         var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
-        var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
+        var add_entry_button = $("<button class='button-15' id='add-button'>Add Entry</button>");
         $(add_entry_form).append(add_entry_button)
         $(".add-entry-container").append(add_entry_form)
     }

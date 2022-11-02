@@ -1,7 +1,7 @@
-<%- include('partials/logged-in-header') -%>
+<%- include('partials/profile-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center mt-5">
+  <div class="d-flex h-100 align-items-center justify-content-center">
     <div class="w-50 d-flex flex-column align-items-center justify-content-center gap-5">
 	  <div class="container user-info-container glass-card justify-content-center align-items-center text-center">
 		<p class="mb-2">Welcome, <%- username %></p>
@@ -16,23 +16,24 @@
 		<% } %>
 		<div class="streak-container d-flex justify-content-center">
 			<div class="streak-section">
-				<p>number</p>
+				<p class="large-font"><%- entries.length %></p>
 				<p>Total Contributions</p>
-				<p>DateStartedJournaling - Present</p>
+				<p><%- entries[0].month %>/<%= entries[0].day %>/<%= entries[0].year %> - Present</p>
 			</div>
 			<div class="streak-section streak-section-middle">
 				<img src="/imgs/flame7ffdd9.png" id="flame-icon" alt="">
+				<p class="current-streak">7</p>
 				<p class="mt-3">Current Streak</p>
 				<p>Date - Date</p>
 			</div>
 			<div class="streak-section">
-				<p>number</p>
+				<p class="large-font">number</p>
 				<p>Longest Streak</p>
 				<p>Date - Date</p>
 			</div>
 		</div>
 	  </div>
-	  <div class="calendar-card w-100">
+	  <div class="dark-card w-100 pt-4 pb-5">
       	<section class="ftco-section">
 	    	<div class="container">
 	    		<div class="row">

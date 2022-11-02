@@ -21,6 +21,7 @@ module.exports = {
       res.redirect("/settings/prompts");
     } catch (err) {
       console.log(err);
+      
     }
   },
   getPrompt: async (req, res) => {
@@ -38,8 +39,6 @@ module.exports = {
         prompt: req.body.prompt,
         text: req.body.promptTextEntry,
       });
-      console.log(req.body);
-      console.log(req);
       console.log("Entry has been added!");
       res.redirect("/settings/prompts");
     } catch (err) {
