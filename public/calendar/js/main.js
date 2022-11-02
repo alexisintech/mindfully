@@ -204,21 +204,6 @@ const months = [
     "December" 
 ];
 
-// Set onClick handler for clicking a prompts-nav option
-var prompt_option = $('.prompts-nav-option');
-prompt_option.click(show_prompts);
-
-function show_prompts(event){
-    $(".add-prompts-container").empty();
-    $(".prompts-container").show(250);
-    $(".current-option").removeClass("current-option");
-    $(this).addClass("current-option");
-    if($('.current-option').is('#all-prompts')){
-        var prompt_ul = $("<ul class='list-unstyled'></ul>");
-        $(".prompts-container").append(prompt_ul);
-    }
-}
-
 })(jQuery);
 
 var todaysDate = new Date();

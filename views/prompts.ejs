@@ -3,53 +3,59 @@
 <main class="masthead">
   <div class="d-flex h-100 align-items-center justify-content-center mt-5">
     <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-5">
-      <div class="container nav-options-container glass-card justify-content-center align-items-center text-center">
+      <div class="container prompts-nav-container glass-card justify-content-center align-items-center text-center">
         <h2><%= username %>'s prompts</h2>
-        <div class="d-flex w-50 justify-content-between">
-          <button class="button">All</button>
-          <button class="button">For You</button>
-          <button class="button">By You</button>
+        <div class="prompts-nav d-flex justify-content-center gap-5">
+          <button class="prompts-nav-option button current-option all-prompts">All</button>
+          <button class="prompts-nav-option button for-you-prompts">For You</button>
+          <button class="prompts-nav-option button by-you-prompts">By You</button>
         </div>
       </div>
-      <p>all for now</p>
-      <ul class="list-unstyled">
-        <% for(var i=0; i<forYouPrompts.length; i++) {%>
-          <li class="justify-content-between mt-5">
-            <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
-              <p><%= forYouPrompts[i].text %></p>
-            </a>
-          </li>
-        <% } %>
-        <% for(var i=0; i<byYouPrompts.length; i++) {%>
-          <li class="justify-content-between mt-5">
-            <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
-              <p><%= byYouPrompts[i].text %></p>
-            </a>
-          </li>
-        <% } %>
-      </ul>
-      <p>for you (for now)</p>
-      <ul class="list-unstyled">
-        <% for(var i=0; i<forYouPrompts.length; i++) {%>
-          <li class="justify-content-between mt-5">
-            <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
-              <p><%= forYouPrompts[i].text %></p>
-            </a>
-          </li>
-        <% } %>
-      </ul>
-      
-      <p>by you (for now)</p>
-        <% for(var i=0; i<byYouPrompts.length; i++) {%>
-          <li class="justify-content-between mt-5">
-            <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
-              <p><%= byYouPrompts[i].text %></p>
-            </a>
-          </li>
-        <% } %>
-      </ul>
-      
-      </ul>
+      <div class="prompts-container">
+        <div class="all-prompts-container">
+          <ul class="list-unstyled">
+            <% for(var i=0; i<forYouPrompts.length; i++) {%>
+              <li class="justify-content-between mt-5">
+                <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
+                  <p><%= forYouPrompts[i].text %></p>
+                </a>
+              </li>
+            <% } %>
+            <% for(var i=0; i<byYouPrompts.length; i++) {%>
+              <li class="justify-content-between mt-5">
+                <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
+                  <p><%= byYouPrompts[i].text %></p>
+                </a>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+
+        <div class="for-you-prompts-container hidden">
+          <ul class="list-unstyled">
+            <% for(var i=0; i<forYouPrompts.length; i++) {%>
+              <li class="justify-content-between mt-5">
+                <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
+                  <p><%= forYouPrompts[i].text %></p>
+                </a>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+
+        <div class="by-you-prompts-container hidden">
+          <ul class="list-unstyled">
+            <% for(var i=0; i<byYouPrompts.length; i++) {%>
+              <li class="justify-content-between mt-5">
+                <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
+                  <p><%= byYouPrompts[i].text %></p>
+                </a>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+
       <form action="/prompts/createPrompt" method="POST" class="w-50 d-flex flex-column">
         <div class="">
           <textarea id="createPrompt" name="createPrompt" class="form-control z-depth-1 textarea-shadow" rows="1" placeholder="Add a prompt..."></textarea>
@@ -59,5 +65,11 @@
     </div>
   </div>
 </main>
+
+<script>
+  var forYouPrompts = <%- JSON.stringify(forYouPrompts) %>
+  var byYouPrompts = <%- JSON.stringify(byYouPrompts) %>
+</script>
+<script src="/js/main.js"></script>
 
 <%- include('partials/footer') -%>
