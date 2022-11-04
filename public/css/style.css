@@ -230,8 +230,17 @@ a.btn, a.btn:hover{
   font-size:1rem;
 }
 
+.streak-container{
+  position:relative;
+}
+
+.flame-container{
+  position:absolute;
+  bottom:50%;
+}
+
 #flame-icon{
-  width:60%;
+  width:65%;
   opacity:70%;
 }
 
@@ -239,7 +248,8 @@ a.btn, a.btn:hover{
   font-size:3.5rem !important;
   text-shadow: 3px 4px 2px rgb(61, 36, 138, 0.8) !important;
   position:absolute;
-  bottom:28%;
+  bottom:-2%;
+  left:44%;
 }
 
 .calendar-card .row {
