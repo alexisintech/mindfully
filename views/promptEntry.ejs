@@ -4,7 +4,12 @@
   <div class="d-flex h-100 align-items-center justify-content-center">
     <div class="h-100 w-50 d-flex flex-column align-items-left justify-content-center gap-3">
       <form action="/settings/prompts/createEntry" method="POST" class="d-flex flex-column">
-        <h2 id="prompt"><%= prompt.text %></h2>
+        <!-- <h2 id="prompt"><%= prompt.text %></h2> -->
+        <select name="prompts" id="prompt">
+          <% for(var i=0; i<prompts.length; i++) {%>
+            <option><%= prompts[i].text %></option>
+          <% } %>
+        </select>
         <div class="">
             <textarea id="promptTextEntry" name="promptTextEntry" class="form-control z-depth-1 textarea-shadow p-4" rows="18" placeholder="Write without judgement..." required></textarea>
         </div>

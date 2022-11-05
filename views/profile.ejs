@@ -2,7 +2,7 @@
 
 <main class="masthead">
   <div class="d-flex h-100 align-items-center justify-content-center">
-    <div class="d-flex flex-column align-items-center justify-content-center gap-5">
+    <div class="profile-content d-flex flex-column align-items-center justify-content-center gap-5">
 	  <div class="container user-info-container glass-card justify-content-center align-items-center text-center">
 		<p class="mb-2">Welcome, <%- username %></p>
 		<% if (currentHour >=20 || currentHour == 00 || currentHour < 5) { %>
@@ -14,28 +14,7 @@
 		<% } else { %>
 			<p class="greeting">Good evening</p>
 		<% } %>
-		<div class="streak-container d-flex justify-content-center">
-			<div class="streak-section">
-				<p class="large-font"><%- entries.length %></p>
-				<p>Total Contributions</p>
-				<p><%- entries[0].month %>/<%= entries[0].day %>/<%= entries[0].year %> - Present</p>
-			</div>
-			<div class="streak-section streak-section-middle">
-				<div class="streak-container">
-					<div id="flame-container">
-						<img src="/imgs/flame7ffdd9.png" id="flame-icon" alt="">
-					</div>
-					<div class="current-streak">7</div>
-				</div>
-				<p class="mt-2">Current Streak</p>
-				<p>Date - Date</p>
-			</div>
-			<div class="streak-section">
-				<p class="large-font">number</p>
-				<p>Longest Streak</p>
-				<p>Date - Date</p>
-			</div>
-		</div>
+		
 	  </div>
 	  <div class="dark-card w-100 pt-4 pb-5">
       	<section class="ftco-section">
@@ -84,12 +63,12 @@
 	    		              </tbody> 
 	    			          </table>
 	    			        </div> 
-							<div class="add-entry-container">
-							</div>
 	    			      </div>
 	    			    </div>
 	    			    <div class="entry-container">
 	    			    </div>
+						<div class="add-entry-container">
+						</div>
 	    			  </div>
 	    			</div>
 	    		</div>

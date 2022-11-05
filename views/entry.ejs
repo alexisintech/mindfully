@@ -1,11 +1,16 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center">
-    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-3">
-      <h2><%= entry.monthAsWord %> <%= entry.day %>, <%= entry.year %> <%= entry.time %></h2>
-      <p><%= entry.prompt %></p>
-      <p><%= entry.text %></p>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="unique-entry-content-container d-flex flex-column align-items-center justify-content-center gap-3">
+      <div class="container unique-entry-container glass-card d-flex flex-column">
+        <div class="unique-entry-header">
+          <p><%= entry.monthAsWord %> <%= entry.day %>, <%= entry.year %></p>
+          <p><%= entry.time %></p>
+        </div>
+        <p class="unique-entry-prompt"><%= entry.prompt %></p>
+        <p class="text-justify"><%= entry.text %></p>
+      </div>
     </div>
   </div>
 </main>

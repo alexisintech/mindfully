@@ -27,7 +27,10 @@ module.exports = {
   getPrompt: async (req, res) => {
     try {
         const prompt = await Prompt.findById(req.params.id);
-        res.render("promptEntry.ejs", { prompt: prompt });
+        const byYouPrompts = await Prompt.find({ user: req.user.id })
+        const forYouPrompts = await Prompt.find( {user: '000000000000000000000001'} );
+        const prompts = byYouPrompts.concat(forYouPrompts);
+        res.render("promptEntry.ejs", { prompt: prompt, prompts: prompts });
     } catch (err) {
       console.log(err);
     }
@@ -36,9 +39,10 @@ module.exports = {
     try {
       await Entry.create({
         user: req.user.id,
-        prompt: req.body.prompt,
+        prompt: req.body.prompts,
         text: req.body.promptTextEntry,
       });
+      console.log(req);
       console.log("Entry has been added!");
       res.redirect("/settings/prompts");
     } catch (err) {

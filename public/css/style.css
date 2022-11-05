@@ -68,6 +68,9 @@ a.btn, a.btn:hover{
   cursor: pointer;
   direction: ltr;
   font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 0.025em;
+  font-weight: 400;
   min-width: 30px;
   overflow: visible;
   padding: 0.5rem 1.5rem;
@@ -189,6 +192,10 @@ a.btn, a.btn:hover{
   width: 60%;
 }
 
+.profile-content{
+  min-width:50%;
+}
+
 .user-info-container{
   padding: 3rem 1rem;
 }
@@ -299,6 +306,10 @@ a.btn, a.btn:hover{
   display: none;
 }
 
+.input-hidden#text{
+  display: none;
+}
+
 .prompts-container{
   padding: 3rem;
 }
@@ -347,6 +358,10 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   outline: 0 none !important;
 }
 
+#prompt{
+  margin-bottom:1rem;
+}
+
 #promptTextEntry{
   padding: 0.8rem 1rem;
 }
@@ -356,6 +371,38 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   margin:0;
 }
 
-.add-entry-container{
+.add-new-entry-container{
   gap:5rem;
+}
+
+.add-entry-container{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+}
+
+.unique-entry-content-container{
+  min-width: 50%;
+}
+
+.unique-entry-container{
+  padding: 3rem 6rem;
+}
+
+.unique-entry-header{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid white;
+  padding-bottom:0.5rem;
+  margin-bottom:2rem;
+}
+
+.unique-entry-header p{
+  font-size:2rem;
+  margin:0;
+}
+
+.unique-entry-prompt{
+  font-style:italic;
+  font-size:1.3rem;
 }
