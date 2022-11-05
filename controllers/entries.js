@@ -1,4 +1,5 @@
 const Entry = require("../models/Entry");
+const Prompt = require("../models/Prompt");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -19,9 +20,20 @@ module.exports = {
       console.log(err);
     }
   },
-  getBlank: async (req, res) => {
+  getBlankEntry: async (req, res) => {
     try {
       res.render("blank.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getPromptEntry: async (req, res) => {
+    try {
+        const prompt = await Prompt.findById(req.params.id);
+        const byYouPrompts = await Prompt.find({ user: req.user.id })
+        const forYouPrompts = await Prompt.find( {user: '000000000000000000000001'} );
+        const prompts = byYouPrompts.concat(forYouPrompts);
+        res.render("promptEntry.ejs", { prompt: prompt, prompts: prompts });
     } catch (err) {
       console.log(err);
     }

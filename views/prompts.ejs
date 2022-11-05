@@ -12,21 +12,16 @@
         </div>
       </div>
       <div class="w-100 prompts-container dark-card d-flex flex-column gap-3">
-        <h3 class="m-0">Click on a prompt to begin writing a new entry...</h3>
         <div class="all-prompts-container">
           <ul class="list-unstyled m-0 d-flex flex-column gap-3">
             <% for(var i=0; i<forYouPrompts.length; i++) {%>
               <li class="justify-content-between">
-                <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
                   <p><%= forYouPrompts[i].text %></p>
-                </a>
               </li>
             <% } %>
             <% for(var i=0; i<byYouPrompts.length; i++) {%>
               <li class="justify-content-between">
-                <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
                   <p><%= byYouPrompts[i].text %></p>
-                </a>
               </li>
             <% } %>
           </ul>
@@ -36,9 +31,7 @@
           <ul class="list-unstyled m-0 d-flex flex-column gap-3">
             <% for(var i=0; i<forYouPrompts.length; i++) {%>
               <li class="justify-content-between">
-                <a href="/settings/prompts/<%= forYouPrompts[i]._id%>">
                   <p><%= forYouPrompts[i].text %></p>
-                </a>
               </li>
             <% } %>
           </ul>
@@ -48,9 +41,7 @@
           <ul class="list-unstyled m-0 d-flex flex-column gap-3">
             <% for(var i=0; i<byYouPrompts.length; i++) {%>
               <li class="justify-content-between">
-                <a href="/settings/prompts/<%= byYouPrompts[i]._id%>">
                   <p><%= byYouPrompts[i].text %></p>
-                </a>
               </li>
             <% } %>
           </ul>
@@ -58,7 +49,7 @@
       </div>
 
       <div class="add-prompt-container glass-card d-flex flex-column align-items-center justify-content-center">
-        <form action="/prompts/createPrompt" method="POST" class="create-prompt-form d-flex flex-column">
+        <form action="/settings/createPrompt" method="POST" class="create-prompt-form d-flex flex-column">
           <div class="">
             <textarea id="createPrompt" name="createPrompt" class="form-control z-depth-1" rows="1" placeholder="Add a prompt..." required></textarea>
           </div>

@@ -143,15 +143,47 @@ function show_entries(entries, month, day, year) {
     // Clear the dates container
     $(".entry-container").empty();
     $(".entry-container").show(250);
-    console.log(month);
     let monthAsNumber;
-    if(month==='October'){
-        monthAsNumber = 10;
+    switch(month){
+        case 'January':
+            monthAsNumber = 1;
+            break;
+        case 'February':
+            monthAsNumber = 2;
+            break;
+        case 'March':
+            monthAsNumber = 3;
+            break;
+        case 'April':
+            monthAsNumber = 4;
+            break;
+        case 'May':
+            monthAsNumber = 5;
+            break;
+        case 'June':
+            monthAsNumber = 6;
+            break;
+        case 'July':
+            monthAsNumber = 7;
+            break;
+        case 'August':
+            monthAsNumber = 8;
+            break;
+        case 'September':
+            monthAsNumber = 9;
+            break;
+        case 'October':
+            monthAsNumber = 10;
+            break;
+        case 'November':
+            monthAsNumber = 11;
+            break;
+        case 'December':
+            monthAsNumber = 12;
+            break;
     }
-    console.log(monthAsNumber);
     let activeDate = `${monthAsNumber}${day}${year}`
-    let activeDateAsNum = Number(activeDate)
-    console.log(activeDate);
+    let activeDateAsNum = Number(activeDate);
 
     // If there are no entries for this date, notify the user
     if(entries.length===0) {

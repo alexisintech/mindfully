@@ -24,18 +24,7 @@ module.exports = {
       
     }
   },
-  getPrompt: async (req, res) => {
-    try {
-        const prompt = await Prompt.findById(req.params.id);
-        const byYouPrompts = await Prompt.find({ user: req.user.id })
-        const forYouPrompts = await Prompt.find( {user: '000000000000000000000001'} );
-        const prompts = byYouPrompts.concat(forYouPrompts);
-        res.render("promptEntry.ejs", { prompt: prompt, prompts: prompts });
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  createPromptEntry: async (req, res) => {
+  createEntry: async (req, res) => {
     try {
       await Entry.create({
         user: req.user.id,
@@ -43,8 +32,8 @@ module.exports = {
         text: req.body.promptTextEntry,
       });
       console.log(req);
-      console.log("Entry has been added!");
-      res.redirect("/settings/prompts");
+      console.log("Entry with prompt has been added!");
+      res.redirect("/profile");
     } catch (err) {
       console.log(err);
     }
