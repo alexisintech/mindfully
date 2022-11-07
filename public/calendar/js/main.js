@@ -235,13 +235,13 @@ const months = [
 
 })(jQuery);
 
-var todaysDate = new Date();
-var dd = String(todaysDate.getDate()).padStart(2, '0');
-var mm = String(todaysDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = todaysDate.getFullYear();
+// var todaysDate = new Date();
+// var dd = String(todaysDate.getDate()).padStart(2, '0');
+// var mm = String(todaysDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+// var yyyy = todaysDate.getFullYear();
 
-todaysDate = mm + '/' + dd + '/' + yyyy;
+// todaysDate = mm + '/' + dd + '/' + yyyy;
 
-window.onload = (event) => {
-    document.querySelector('.todaysDate').innerHTML = todaysDate
-};
+// window.onload = (event) => {
+//     document.querySelector('.todaysDate').innerHTML = todaysDate
+// };
