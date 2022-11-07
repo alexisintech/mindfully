@@ -241,6 +241,11 @@ const months = [
 // var yyyy = todaysDate.getFullYear();
 
 // todaysDate = mm + '/' + dd + '/' + yyyy;
+// function addZero(i) {
+//     if (i < 10) {i = "0" + i}
+//     return i;
+//   }
+// const currentTime = `${addZero(todaysDate.getHours())}:${addZero(todaysDate.getMinutes())}`
 
 // window.onload = (event) => {
 //     document.querySelector('.todaysDate').innerHTML = todaysDate

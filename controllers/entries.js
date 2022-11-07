@@ -5,10 +5,18 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const entries = await Entry.find({ user: req.user.id })
-      var date = new Date();
-	    var currentTime = `${date.getHours()}:${date.getMinutes()}`
+      let date = new Date();
+      let dd = String(date.getDate()).padStart(2, '0');
+      let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+      let yyyy = date.getFullYear();
+      let todaysDate = mm + '/' + dd + '/' + yyyy;
+	    function addZero(i) {
+        if (i < 10) {i = "0" + i}
+        return i;
+      }
+      const currentTime = `${addZero(date.getHours())}:${addZero(date.getMinutes())}`
       var currentHour = date.getHours()
-      res.render("profile.ejs", { entries: entries, username: req.user.userName, currentTime: currentTime, currentHour: currentHour });
+      res.render("profile.ejs", { entries: entries, username: req.user.userName, currentTime: currentTime, currentHour: currentHour, todaysDate: todaysDate });
     } catch (err) {
       console.log(err);
     }
