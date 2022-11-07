@@ -23,7 +23,7 @@ body {
   background: var(--dark);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
 
 .guest-bg{
@@ -62,6 +62,7 @@ a.btn, a.btn:hover{
   border: 1px solid rgb(24, 179, 171);
   border-radius: 25px;
   color: #FFFFFF;
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.25) !important;
   cursor: pointer;
   direction: ltr;
   font-size: 1rem;
@@ -101,6 +102,11 @@ a.btn, a.btn:hover{
 
 .button-15-small{
   padding: 0.25rem 1rem;
+}
+
+.current-option{
+  box-shadow: 0 0 5px 5px rgba(139, 203, 255, 0.7);
+  outline: none;
 }
 
 .btn{
@@ -270,6 +276,10 @@ a.btn, a.btn:hover{
   padding:3rem;
 }
 
+.glass-card.glass-card-hoverable:hover{
+  background: rgba(255, 255, 255, 0.15);
+}
+
 .dark-card{
   background: rgb(6, 8, 61, 0.8);
   box-shadow: 0 8px 26px 0 rgb(66 64 62 / 37%);
@@ -291,12 +301,25 @@ a.btn, a.btn:hover{
   margin: 0;
 }
 
-.prompts-nav-container{
-  padding: 3rem 1rem;
+.container-for-prompts-container{
+  width:50%;
 }
 
-.prompts-nav {
-  margin-top:2rem;
+.prompts-container{
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 8rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap:2rem;
+}
+
+.prompts-nav{
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  padding: 0 6rem;
 }
 
 .hidden{
@@ -307,8 +330,11 @@ a.btn, a.btn:hover{
   display: none;
 }
 
-.prompts-container{
-  padding: 3rem;
+.prompt-choices-container{
+  display:flex;
+  flex-direction: column;
+  margin: 2rem 0 1rem 0;
+  gap:3rem;
 }
 
 .prompts-container h3{
@@ -317,7 +343,7 @@ a.btn, a.btn:hover{
   font-style:italic;
 }
 
-.prompts-container a, .all-entries-container a{
+.prompts-container a{
   color:white;
 }
 
@@ -326,13 +352,8 @@ a.btn, a.btn:hover{
   margin:0;
 }
 
-.prompts-container a:hover, .all-entries-container a:hover, .all-entries-container p:hover{
+.prompts-container a:hover{
   color:rgb(255, 255, 255, 0.6) !important;
-}
-
-.all-entries-container p{
-  font-size:1rem;
-  margin:0;
 }
 
 .add-prompt-container{
@@ -355,17 +376,16 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   outline: 0 none !important;
 }
 
-#prompt{
-  margin-bottom:1rem;
-}
-
-#promptTextEntry{
-  padding: 0.8rem 1rem;
-}
-
-.all-entries-container p{
+#prompt-select{
+  cursor:pointer;
   color:white;
-  margin:0;
+  font-size:1.2rem;
+  margin-bottom:1rem;
+  padding:1rem 1.5rem;
+}
+
+#prompt-select option{
+  color:black;
 }
 
 .add-new-entry-container{
@@ -404,15 +424,15 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   font-size:1.3rem;
 }
 
-.date-entry-container{
+.entries-container{
   padding: 4rem 10rem;
 }
 
-.date-entry-container ul {
+.entries-container ul {
   padding-top:2rem;
 }
 
-.date-entry-li{
+.entries-li{
   display:flex;
   flex-direction: row;
   width:100%;
@@ -425,11 +445,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.date-entry-li:hover{
+.entries-li:hover{
   background: rgba( 255, 255, 255, 0.05 );
 }
 
-.date-entry-a{
+.entries-a{
   display:flex;
   flex-direction: row;
   align-items:center;
@@ -438,11 +458,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   color:rgb(255, 255, 255, 0.8) !important;
 }
 
-.date-entry-a:hover{
+.entries-a:hover{
   color: white !important;
 }
 
-.date-entry-date{
+.entries-date{
   display: flex;
   flex-direction: column;
   padding:1rem;
@@ -452,7 +472,7 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25) !important;
 }
 
-.date-entry-date > p {
+.entries-date > p {
   font-size:1.5rem;
   margin:0;
 }

@@ -1,15 +1,19 @@
 <%- include('partials/logged-in-header') -%>
 
-<main class="masthead h-100">
-  <div class="h-100 d-flex align-items-center justify-content-center">
-    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-3">
-      <div class="container all-entries-container glass-card d-flex flex-column justify-content-center align-items-center text-center gap-5">
+<main class="masthead">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex flex-column align-items-center justify-content-center gap-3">
+      <div class="entries-container container glass-card d-flex flex-column justify-content-center align-items-center text-center gap-5">
         <h2 class="m-0"><%= username %>'s entries</h2>
-        <ul class="d-flex flex-column gap-4 list-unstyled">
+        <ul class="w-100 d-flex flex-column gap-4 list-unstyled">
           <% for(var i=0; i<entries.length; i++) {%>
-            <li class="justify-content-between">
-              <a href="/entry/<%= entries[i]._id%>">
-                <p><%= entries[i].monthAsWord %> <%= entries[i].day %>, <%= entries[i].year %> | <%= entries[i].time %></p>
+            <li class="entries-li">
+              <a class="entries-a" href="/entry/<%= entries[i]._id%>">
+                <div class="entries-date">
+                  <p><%= entries[i].month %>/<%= entries[i].day %>/<%= entries[i].year %></p>
+                  <p><%= entries[i].time %></p>
+                </div>
+                <div class="peekaboo-text"><%- entries[i].text %></div>
               </a>
             </li>
           <% } %>

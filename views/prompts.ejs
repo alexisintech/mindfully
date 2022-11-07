@@ -1,50 +1,50 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="h-100 d-flex align-items-center justify-content-center">
-    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-5">
-      <div class="container prompts-nav-container glass-card justify-content-center align-items-center text-center">
-        <h2><%= username %>'s prompts</h2>
-        <div class="prompts-nav d-flex justify-content-center gap-5">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="container-for-prompts-container d-flex flex-column align-items-center justify-content-center gap-5">
+      <div class="prompts-container container glass-card">
+        <h2 class="m-0"><%= username %>'s prompts</h2>
+        <div class="prompts-nav">
           <button class="prompts-nav-option button-15 current-option all-prompts">All</button>
           <button class="prompts-nav-option button-15 for-you-prompts">For You</button>
           <button class="prompts-nav-option button-15 by-you-prompts">By You</button>
         </div>
-      </div>
-      <div class="w-100 prompts-container dark-card d-flex flex-column gap-3">
-        <div class="all-prompts-container">
-          <ul class="list-unstyled m-0 d-flex flex-column gap-3">
-            <% for(var i=0; i<forYouPrompts.length; i++) {%>
-              <li class="justify-content-between">
-                  <p><%= forYouPrompts[i].text %></p>
-              </li>
-            <% } %>
-            <% for(var i=0; i<byYouPrompts.length; i++) {%>
-              <li class="justify-content-between">
-                  <p><%= byYouPrompts[i].text %></p>
-              </li>
-            <% } %>
-          </ul>
-        </div>
+        <div class="w-100 prompt-choices-container">
+          <div class="all-prompts-container">
+            <ul class="list-unstyled m-0 d-flex flex-column gap-3">
+              <% for(var i=0; i<forYouPrompts.length; i++) {%>
+                <li>
+                    <p><%= forYouPrompts[i].text %></p>
+                </li>
+              <% } %>
+              <% for(var i=0; i<byYouPrompts.length; i++) {%>
+                <li>
+                    <p><%= byYouPrompts[i].text %></p>
+                </li>
+              <% } %>
+            </ul>
+          </div>
 
-        <div class="for-you-prompts-container hidden">
-          <ul class="list-unstyled m-0 d-flex flex-column gap-3">
-            <% for(var i=0; i<forYouPrompts.length; i++) {%>
-              <li class="justify-content-between">
-                  <p><%= forYouPrompts[i].text %></p>
-              </li>
-            <% } %>
-          </ul>
-        </div>
+          <div class="for-you-prompts-container hidden">
+            <ul class="list-unstyled m-0 d-flex flex-column gap-3">
+              <% for(var i=0; i<forYouPrompts.length; i++) {%>
+                <li>
+                    <p><%= forYouPrompts[i].text %></p>
+                </li>
+              <% } %>
+            </ul>
+          </div>
 
-        <div class="by-you-prompts-container hidden">
-          <ul class="list-unstyled m-0 d-flex flex-column gap-3">
-            <% for(var i=0; i<byYouPrompts.length; i++) {%>
-              <li class="justify-content-between">
-                  <p><%= byYouPrompts[i].text %></p>
-              </li>
-            <% } %>
-          </ul>
+          <div class="by-you-prompts-container hidden">
+            <ul class="list-unstyled m-0 d-flex flex-column gap-3">
+              <% for(var i=0; i<byYouPrompts.length; i++) {%>
+                <li>
+                    <p><%= byYouPrompts[i].text %></p>
+                </li>
+              <% } %>
+            </ul>
+          </div>
         </div>
       </div>
 
