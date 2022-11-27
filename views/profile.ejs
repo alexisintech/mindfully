@@ -90,7 +90,9 @@
 	    </section>
 	  </div>
 	  <div class="container todays-quote-container glass-card">
-		<p class="m-0">"What is coming is better than what has gone."</p>
+		<p class="m-0">
+			<%- quotes[Math.floor(Math.random() * quotes.length)] %>
+		</p>
 	  </div>
     </div>
   </div>
@@ -103,6 +105,3 @@
 <script src="/calendar/js/popper.js"></script>
 <script src="/calendar/js/bootstrap.min.js"></script>
 <script src="/calendar/js/main.js"></script>
-
-
-<%- include('partials/footer') -%>

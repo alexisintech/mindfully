@@ -216,13 +216,13 @@ a.btn, a.btn:hover{
 }
 
 .greeting{
-  font-size:5rem;
+  font-size:4.5rem;
   font-style: italic;
   line-height: 4rem;
 }
 
 .welcome-buttons-container{
-  width:70%;
+  width:65%;
   display:flex;
   margin-top:3rem;
   margin-bottom:1.5rem;
@@ -236,7 +236,7 @@ a.btn, a.btn:hover{
 .todays-entry-button, .past-entries-button{
   font-size:1.2rem;
   border-radius:10px;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 2.5rem;
 }
 
 /* .streak-container{
