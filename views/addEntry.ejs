@@ -1,22 +1,20 @@
 <%- include('partials/logged-in-header') -%>
 
-<main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center">
-    <div class="h-100 row align-items-center justify-content-center gap-5">
-      <form action="/addEntry/blank" method="GET" class="col mh-50">
-        <button class="h-100 glass-card new-entry-card">
-          Give me a blank slate to<br> 
-          allow me to mind dump...
-        </button>
-      </form>
-      <form action="#" method="GET" class="col mh-50">
-        <button class="h-100 glass-card new-entry-card">
-          Give me a prompt to guide<br> 
-          me through some feelings...
-        </button>
-      </form>
+<main class="masthead h-100">
+  <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="w-50 add-new-entry-container d-flex align-items-center justify-content-center">
+        <form action="/addEntry/blank" method="GET">
+          <button class="h-100 m-0 glass-card glass-card-hoverable new-entry-card">
+            Give me a blank slate to<br> 
+            allow me to mind dump...
+          </button>
+        </form>
+        <form action="/addEntry/prompt" method="GET">
+          <button class="h-100 m-0 glass-card glass-card-hoverable new-entry-card">
+            Give me a prompt to guide<br> 
+            me through some feelings...
+          </button>
+        </form>
     </div>
   </div>
 </main>
-
-<%- include('partials/footer') -%>

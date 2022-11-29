@@ -9,8 +9,6 @@ router.get("/entries", ensureAuth, entriesController.getAllEntries);
 
 router.get("/prompts", ensureAuth, promptsController.getAllPrompts);
 
-router.get("/prompts/:id", ensureAuth, promptsController.getPrompt);
-
-router.post("/prompts/createEntry", ensureAuth, promptsController.createPromptEntry);
+router.post("/createPrompt", ensureAuth, promptsController.createPrompt);
 
 module.exports = router;

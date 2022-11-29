@@ -7,7 +7,11 @@ const options = { month: 'long' };
 const year = date.getFullYear();
 const fullDateAsString = `${month}${day}${year}`
 const fullDateAsNum = Number(fullDateAsString)
-const time = `${date.getHours()}:${date.getMinutes()}`
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
+}
+const time = `${addZero(date.getHours())}:${addZero(date.getMinutes())}`
 
 const EntrySchema = new mongoose.Schema({
   user: {
@@ -50,7 +54,6 @@ const EntrySchema = new mongoose.Schema({
   },
   text: {
     type: String,
-    required: true,
   },
 });
 

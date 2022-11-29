@@ -1,46 +1,42 @@
 <%- include('partials/header') -%>
 
-<main class="d-flex align-items-center justify-content-center">
-  <div class="h-100 container">
-    <div class="h-100 d-flex justify-content-center align-items-center">
-      <div class="login-card index-glass-card text-center d-flex flex-column justify-content-center align-items-center">
-        <h1 class="text-center">Login</h1>
-        <section class="login-info mt-4">
-          <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-          <div class="alert alert-danger"><%= el.msg %></div>
-          <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-          messages.info.forEach( el => { %>
-          <div class="alert alert-info"><%= el.msg %></div>
-          <% }) %> <% } %>
-          <form action="/login" method="POST">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label"
-                >Email address</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                name="email"
-              />
-            </div>
-            <div class="mb-4">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-                name="password"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary mt-2 mb-2">Login</button>
-            <p class="mb-3">Don't have an account? <a href="/signup">Sign up</a> </p>
-          </form>
-        </section>
-      </div>
+<main class="masthead h-100">
+  <div class="h-100 container d-flex align-items-center justify-content-center">
+    <div class="container login-card glass-card">
+      <h1 class="text-center">Login</h1>
+      <section class="login-info mt-4">
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+        messages.info.forEach( el => { %>
+        <div class="alert alert-info"><%= el.msg %></div>
+        <% }) %> <% } %>
+        <form action="/login" method="POST">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="email"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mt-2 mb-2">Login</button>
+          <p class="mb-3">Don't have an account? <a href="/signup">Sign up</a> </p>
+        </form>
+      </section>
     </div>
   </div>
 </main>
-
-<%- include('partials/footer') -%>

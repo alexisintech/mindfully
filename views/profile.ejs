@@ -1,10 +1,13 @@
-<%- include('partials/logged-in-header') -%>
+<%- include('partials/profile-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center mt-5">
-    <div class="w-50 d-flex flex-column align-items-center justify-content-center gap-5">
-	  <div class="container user-info-container glass-card justify-content-center align-items-center text-center">
-		<p class="mb-2">Welcome, <%- username %></p>
+  <div class="d-flex h-100 align-items-center justify-content-center">
+    <div class="profile-content d-flex flex-column align-items-center justify-content-center gap-5">
+	  <div class="container user-info-container glass-card">
+		<div class="welcome">
+		  <p>Welcome, <%- username %></p>
+		  <p>It is currently <%- currentTime %> on <%- todaysDate %> </p>
+		</div>
 		<% if (currentHour >=20 || currentHour == 00 || currentHour < 5) { %>
 			<p class="greeting">Get some sleep!</p>
 		<% } else if (currentHour >=5 && currentHour < 11) { %>
@@ -14,25 +17,20 @@
 		<% } else { %>
 			<p class="greeting">Good evening</p>
 		<% } %>
-		<div class="streak-container d-flex justify-content-center">
-			<div class="streak-section">
-				<p>number</p>
-				<p>Total Contributions</p>
-				<p>DateStartedJournaling - Present</p>
-			</div>
-			<div class="streak-section streak-section-middle">
-				<img src="/imgs/flame7ffdd9.png" id="flame-icon" alt="">
-				<p class="mt-3">Current Streak</p>
-				<p>Date - Date</p>
-			</div>
-			<div class="streak-section">
-				<p>number</p>
-				<p>Longest Streak</p>
-				<p>Date - Date</p>
-			</div>
+		<div class="welcome-buttons-container">
+		  <div class="todays-entry-button-container">
+		  	<form action="/addEntry" method="GET">
+		  		<button class="button-15 todays-entry-button">Write today's entry</button>
+		  	</form>
+		  </div>
+		  <div class="past-entries-button-container">
+		  	<form action="/settings/entries" method="GET">
+		  		<button class="button-15 past-entries-button">View past entries</button>
+		  	</form>
+		  </div>
 		</div>
 	  </div>
-	  <div class="calendar-card w-100">
+	  <div class="dark-card w-100 pt-4 pb-5">
       	<section class="ftco-section">
 	    	<div class="container">
 	    		<div class="row">
@@ -79,17 +77,22 @@
 	    		              </tbody> 
 	    			          </table>
 	    			        </div> 
-							<div class="add-entry-container">
-							</div>
 	    			      </div>
 	    			    </div>
 	    			    <div class="entry-container">
 	    			    </div>
+						<div class="add-entry-container">
+						</div>
 	    			  </div>
 	    			</div>
 	    		</div>
 	    	</div>
 	    </section>
+	  </div>
+	  <div class="container todays-quote-container glass-card">
+		<p class="m-0">
+			<%- quotes[Math.floor(Math.random() * quotes.length)] %>
+		</p>
 	  </div>
     </div>
   </div>
@@ -102,6 +105,3 @@
 <script src="/calendar/js/popper.js"></script>
 <script src="/calendar/js/bootstrap.min.js"></script>
 <script src="/calendar/js/main.js"></script>
-
-
-<%- include('partials/footer') -%>

@@ -8,6 +8,8 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
+
+// Routes
 const mainRoutes = require("./routes/main");
 const entryRoutes = require("./routes/entry");
 const addEntryRoutes = require("./routes/addEntry");

@@ -1,4 +1,4 @@
-/*!
+/*!hover
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
@@ -141,7 +141,7 @@ a {
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: var(--dark-accent-color);
+    color: var(--accent);
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -1604,7 +1604,7 @@ pre {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: 10px;
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3710,7 +3710,7 @@ input[type="button"].btn-block {
 .navbar-light .navbar-brand {
   color: var(--accent); }
   .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-    color: var(--accent); }
+    color: var(--acent); }
 
 .navbar-light .navbar-nav .nav-link {
   color: var(--accent); }
@@ -8163,7 +8163,7 @@ h1, h2, h3, h4, h5,
   color: white; }
 
 .bg-primary {
-  background: var(--light-secondary-color) !important; }
+  background: rgba(24, 179, 171, 0.877) !important; }
 
 /* .ftco-section {
   padding: 7em 0; } */
@@ -8188,7 +8188,7 @@ h1, h2, h3, h4, h5,
   width: 100%;
   max-width: 500px;
   padding: 0px 0;
-  height: 500px;
+  height: 480px;
   position: relative;
   margin: 20px auto; }
 
@@ -8200,8 +8200,6 @@ h1, h2, h3, h4, h5,
   margin: 0px auto;
   display: inline-block;
   padding: 0px;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
   padding: 0; }
   @media (max-width: 767.98px) {
     .entry-container {
@@ -8212,25 +8210,52 @@ h1, h2, h3, h4, h5,
   clear: both; }
 
 .entry-card {
+  appearance:none;
   padding: 20px 0;
   max-width: 100%;
   display: block;
-  background: var(--light-secondary-color);
-  border: none !important;
+  background-image: linear-gradient(rgba(24, 179, 171, 0.7), rgb(30, 116, 121, 0.7));
+  border: 1px solid rgb(24, 179, 171);
+  border-radius:15px;
   margin: 20px;
   color: #fff;
+  text-align: center;
   margin-left: 12px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
   margin: 0; }
+    
+.entry-card.has-entry{
+  background-image: linear-gradient(rgba(24, 179, 171), rgb(30, 116, 121));
+}
+
+/* .entry-card.has-entry:hover {
+  background-image: linear-gradient(rgb(81, 169, 238), rgb(20, 123, 205));
+  border-color: #0e609b;
+  text-decoration: none;
+}
+
+.entry-card.has-entry:active {
+  background-image: linear-gradient(rgb(61, 148, 217), rgb(0, 103, 185));
+  border-color: #006DBC;
+  outline: none;
+}
+
+.entry-card.has-entry:focus {
+  box-shadow: 0 0 5px 5px rgba(139, 203, 255, 0.7);
+  outline: none;
+} */
+
+.entry-click:hover{
+  cursor:pointer;
+  color: white !important;
+}
 
 .entry-count, .entry-name {
   display: inline;
   padding: 0 10px;
-  font-size: 1rem; }
+  font-size: 1.2rem; }
 
 .entry-count {
-  color: var(--light-secondary-color);
+  color: rgba(24, 179, 171, 0.877);
   text-align: right; }
 
 .entry-name {
@@ -8244,6 +8269,7 @@ h1, h2, h3, h4, h5,
   color:white;
   border:none;
   padding-left: 10px;
+  font-size:1.2rem;
 }
 
 /*  Calendar wrapper */
@@ -8252,7 +8278,7 @@ h1, h2, h3, h4, h5,
   margin: 0 auto;
   height: 100%;
   width: 100%;
-  background: rgb(255, 255, 255);
+  background: transparent;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font: 13px Helvetica, Arial, san-serif;
@@ -8276,7 +8302,7 @@ h1, h2, h3, h4, h5,
 
 /* Calendar Header */
 .year-header {
-  background: #fff;
+  background: transparent;
   height: 40px;
   text-align: center;
   position: relative;
@@ -8288,7 +8314,7 @@ h1, h2, h3, h4, h5,
   display: inline-block;
   font-size: 20px;
   line-height: 40px;
-  color: #000; }
+  color: #fff; }
 
 .left-button, .right-button {
   cursor: pointer;
@@ -8306,7 +8332,7 @@ h1, h2, h3, h4, h5,
       -o-transition: none;
       transition: none; } }
   .left-button:hover, .right-button:hover {
-    color: var(--light-secondary-color) !important; }
+    color: rgba(24, 179, 171, 0.877) !important; }
 
 .left-button {
   left: 0; }
@@ -8330,10 +8356,14 @@ h1, h2, h3, h4, h5,
   transition: .2s ease all;
   color: white;
   border: none;
-  background: var(--light-secondary-color); }
+  background: rgba(24, 179, 171, 0.877) }
   .button.button-white {
-    background: #fff;
-    color: #000; }
+    background: white;
+    color: var(--dark); }
+  .button.button-dark {
+    background: var(--dark);
+    color: white; 
+  }
   .button:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -8343,10 +8373,7 @@ h1, h2, h3, h4, h5,
   background: #000; }
 
 #add-button {
-  display: block;
-  position: absolute;
-  right: 20px;
-  bottom: 20px; }
+  display: block; }
 
 #add-button:hover, #ok-button:hover, #cancel-button:hover {
   -webkit-transform: scale(1.03);
@@ -8371,10 +8398,10 @@ h1, h2, h3, h4, h5,
   border: 2px solid transparent;
   text-transform: uppercase;
   font-size: 10px;
-  color: #000; }
+  color: #fff; }
 
 .month {
-  cursor: default;
+  cursor: pointer;
   height: 26px;
   width: 26px;
   padding: 0 2px;
@@ -8395,15 +8422,15 @@ h1, h2, h3, h4, h5,
 
 .active-month {
   font-weight: 700;
-  color: var(--light-secondary-color); }
+  color: rgba(24, 179, 171, 0.877) }
 
 .month:hover {
-  color: var(--light-secondary-color); }
+  color: rgba(24, 179, 171, 0.877) }
 
 /*  Dates table */
 .table-date {
   cursor: pointer;
-  color: #2b2b2b;
+  color: #fff;
   height: 26px;
   width: 26px;
   font-size: 15px;
@@ -8434,8 +8461,8 @@ h1, h2, h3, h4, h5,
     z-index: -1; }
 
 .entry-date {
-  border-color: var(--light-secondary-color);
-  background: var(--light-secondary-color);
+  border-color: rgba(24, 179, 171, 0.877);
+  background: rgba(24, 179, 171, 0.877);
   color: #fff; }
   .entry-date:after {
     position: absolute;
@@ -8451,12 +8478,12 @@ h1, h2, h3, h4, h5,
 .todays-date {
   color: #fff; }
 .todays-date:before {
-  background: rgb(94, 121, 200, 0.7) }
+  background: rgba(24, 179, 171, 0.5) }
 
 .active-date {
   color: #fff; }
   .active-date:before {
-    background: var(--light-secondary-color); }
+    background: rgba(24, 179, 171, 0.877); }
 
 .entry-date.active-date {
   background: transparent;
@@ -8465,7 +8492,7 @@ h1, h2, h3, h4, h5,
 /* input dialog */
 .dialog {
   z-index: 5;
-  background: var(--light-secondary-color);
+  background: rgba(24, 179, 171, 0.877);
   position: absolute;
   width: 100%;
   height: 100%;

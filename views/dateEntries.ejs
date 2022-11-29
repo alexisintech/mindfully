@@ -1,20 +1,24 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center">
-    <div class="h-100 w-50 d-flex flex-column align-items-center justify-content-center gap-3">
-      <h2><%= entries[0].monthAsWord %> <%= entries[0].day %>, <%= entries[0].year %></h2>
-      <ul class="list-unstyled">
-        <% for(var i=0; i<entries.length; i++) {%>
-          <li class="justify-content-between mt-5">
-            <a href="/entry/<%= entries[i]._id%>">
-              <p><%= entries[i].monthAsWord %>/<%= entries[i].day %>/<%= entries[i].year %> <%= entries[i].time %></p>
-            </a>
-          </li>
-        <% } %>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex flex-column align-items-center justify-content-center gap-3">
+      <div class="entries-container container glass-card d-flex flex-column justify-content-center align-items-center text-center gap-5">
+        <h2 class="m-0">Your entries on <%= entries[0].monthAsWord %> <%= entries[0].day %>, <%= entries[0].year %></h2>
+        <ul class="w-100 d-flex flex-column gap-4 list-unstyled">
+          <% for(var i=0; i<entries.length; i++) {%>
+            <li class="entries-li">
+              <a class="entries-a" href="/entry/<%= entries[i]._id%>">
+                <div class="entries-date">
+                  <p><%= entries[i].month %>/<%= entries[i].day %>/<%= entries[i].year %></p>
+                  <p><%= entries[i].time %></p>
+                </div>
+                <div class="peekaboo-text"><%- entries[i].text %></div>
+              </a>
+            </li>
+          <% } %>
         </ul>
+      </div>
     </div>
   </div>
 </main>
-
-<%- include('partials/footer') -%>

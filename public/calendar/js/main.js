@@ -21,7 +21,7 @@ $(document).ready(function(){
     show_entries(entries, months[date.getMonth()], today, year);
     $(".add-entry-container").show();
     var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
-    var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
+    var add_entry_button = $("<button class='button-15' id='add-button'>Add Entry</button>");
     $(add_entry_form).append(add_entry_button)
     $(".add-entry-container").append(add_entry_form)
 });
@@ -102,7 +102,7 @@ function date_click(event) {
     if(event.data.month===month && event.data.day===dayNow && event.data.year===yearNow){
         $(".add-entry-container").show();
         var add_entry_form = $("<form action='/addEntry' method='GET'></form>");
-        var add_entry_button = $("<button class='button' id='add-button'>Add Entry</button>");
+        var add_entry_button = $("<button class='button-15' id='add-button'>Add Entry</button>");
         $(add_entry_form).append(add_entry_button)
         $(".add-entry-container").append(add_entry_form)
     }
@@ -143,33 +143,62 @@ function show_entries(entries, month, day, year) {
     // Clear the dates container
     $(".entry-container").empty();
     $(".entry-container").show(250);
-    console.log(month);
     let monthAsNumber;
-    if(month==='October'){
-        monthAsNumber = 10;
+    switch(month){
+        case 'January':
+            monthAsNumber = 1;
+            break;
+        case 'February':
+            monthAsNumber = 2;
+            break;
+        case 'March':
+            monthAsNumber = 3;
+            break;
+        case 'April':
+            monthAsNumber = 4;
+            break;
+        case 'May':
+            monthAsNumber = 5;
+            break;
+        case 'June':
+            monthAsNumber = 6;
+            break;
+        case 'July':
+            monthAsNumber = 7;
+            break;
+        case 'August':
+            monthAsNumber = 8;
+            break;
+        case 'September':
+            monthAsNumber = 9;
+            break;
+        case 'October':
+            monthAsNumber = 10;
+            break;
+        case 'November':
+            monthAsNumber = 11;
+            break;
+        case 'December':
+            monthAsNumber = 12;
+            break;
     }
-    console.log(monthAsNumber);
     let activeDate = `${monthAsNumber}${day}${year}`
-    let activeDateAsNum = Number(activeDate)
-    console.log(activeDate);
+    let activeDateAsNum = Number(activeDate);
 
     // If there are no entries for this date, notify the user
     if(entries.length===0) {
         var entry_card = $("<div class='entry-card'></div>");
         var entry_name = $("<div class='entry-name'>There are no entries for "+month+" "+day+", "+year+".</div>");
-        $(entry_card).css({ "border-left": "10px solid #FF1744" });
         $(entry_card).append(entry_name);
         $(".entry-container").append(entry_card);
     } else if(entries.length===1){
-        var entry_card = $("<div class='entry-card'></div>");
-        $(entry_card).css({ "border-left": "10px solid #FF1744" });
+        var entry_card = $("<div class='entry-card has-entry'></div>");
         var entry_click = $(`<a href='/dateEntry/${activeDateAsNum}' class='entry-click'>There is 1 entry for ${month} ${day}, ${year}.</a>`);
         $(entry_card).append(entry_click);
         $(".entry-container").append(entry_card);
     }
     else {
-        var entry_card = $("<div class='entry-card'></div>");
-        $(entry_card).css({ "border-left": "10px solid #FF1744" });
+        var entry_card = $("<div class='entry-card has-entry'></div>");
         var entry_click = $(`<a href='/dateEntry/${activeDateAsNum}' class='entry-click'>There are ${entries.length} entries for ${month} ${day}, ${year}.</a>`);
         $(entry_card).append(entry_click);
         $(".entry-container").append(entry_card);
@@ -206,13 +235,18 @@ const months = [
 
 })(jQuery);
 
-var todaysDate = new Date();
-var dd = String(todaysDate.getDate()).padStart(2, '0');
-var mm = String(todaysDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = todaysDate.getFullYear();
+// var todaysDate = new Date();
+// var dd = String(todaysDate.getDate()).padStart(2, '0');
+// var mm = String(todaysDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+// var yyyy = todaysDate.getFullYear();
 
-todaysDate = mm + '/' + dd + '/' + yyyy;
+// todaysDate = mm + '/' + dd + '/' + yyyy;
+// function addZero(i) {
+//     if (i < 10) {i = "0" + i}
+//     return i;
+//   }
+// const currentTime = `${addZero(todaysDate.getHours())}:${addZero(todaysDate.getMinutes())}`
 
-window.onload = (event) => {
-    document.querySelector('.todaysDate').innerHTML = todaysDate
-};
+// window.onload = (event) => {
+//     document.querySelector('.todaysDate').innerHTML = todaysDate
+// };

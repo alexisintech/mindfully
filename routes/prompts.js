@@ -6,7 +6,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 // /prompts Routes
 
-router.post("/createPrompt", ensureAuth, promptsController.createPrompt);
+router.post("/createEntry", ensureAuth, promptsController.createEntry);
 
 module.exports = router;
 

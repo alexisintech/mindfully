@@ -21,27 +21,19 @@ module.exports = {
       res.redirect("/settings/prompts");
     } catch (err) {
       console.log(err);
+      
     }
   },
-  getPrompt: async (req, res) => {
-    try {
-        const prompt = await Prompt.findById(req.params.id);
-        res.render("promptEntry.ejs", { prompt: prompt });
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  createPromptEntry: async (req, res) => {
+  createEntry: async (req, res) => {
     try {
       await Entry.create({
         user: req.user.id,
-        prompt: req.body.prompt,
+        prompt: req.body.prompts,
         text: req.body.promptTextEntry,
       });
-      console.log(req.body);
       console.log(req);
-      console.log("Entry has been added!");
-      res.redirect("/settings/prompts");
+      console.log("Entry with prompt has been added!");
+      res.redirect("/profile");
     } catch (err) {
       console.log(err);
     }
