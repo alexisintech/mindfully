@@ -456,6 +456,12 @@ pre {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; }
+  @media (max-width: 420px) {
+    .container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
