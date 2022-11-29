@@ -119,12 +119,6 @@ a.btn, a.btn:hover{
   border-color: var(--main);
 }
 
-.navbar-nav{
-  font-size:1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.05rem;
-}
-
 .navbar-bg {
   background-color: rgba(255, 255, 255, 0.2) !important;
 }
@@ -137,15 +131,45 @@ a.btn, a.btn:hover{
   color: white;
 }
 
-#site-logo{
-  width: 18%;
-  padding-bottom: 2px;
-  margin-right: 0.3rem;
+.site-title-container{
+  display: flex;
+  align-items: center;
+  font-size:1.8rem;
+  font-weight:300;
+  letter-spacing: 0.05rem;
+}
+@media (min-width:765px){
+  .site-title-container{
+    padding-left:1.5rem;
+  }
 }
 
-.site-title{
-  font-size:1.8rem;
-  padding-left: 2rem;
+.site-title-logo{
+  display:flex;
+  gap:0.5rem;
+}
+@media (max-width:745px){
+  .site-title-logo{
+    justify-content:center;
+  }
+}
+
+.site-logo-container{
+  width:5%;
+}
+@media (max-width:745px) {
+  .site-logo-container{
+    width:10%;
+  }
+}
+
+#site-logo{
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+#site-title{
+  color:white;
 }
 
 .navbar-options{
@@ -172,7 +196,6 @@ a.btn, a.btn:hover{
 
 .index-container,.login-card,.signup-card{
   width:100%;
-  height:50%;
   display:flex;
   flex-direction:column;
   justify-content:center;
