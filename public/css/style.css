@@ -198,14 +198,31 @@ a.btn, a.btn:hover{
   width: 100%;
   display: flex;
   justify-content: center;
-  gap:1.2rem;
-  margin-top:1rem;
+  gap:1rem;
+  margin-top:0.5rem;
+  margin-bottom:1rem;
 }
-@media (min-width:416px){
-  .index-buttons-container{
-    margin-top:3rem;
+  @media (min-width:416px){
+    .index-buttons-container{
+      gap:1.2rem;
+      margin-top:1rem;
+    }
   }
-}
+  @media all and (min-width:765px){
+    .index-buttons-container{
+      gap:1.6rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .index-buttons-container{
+      margin-top:1.5rem;
+    }
+  }
+  @media all and (min-width:1439px){
+    .index-buttons-container{
+      gap:2rem;
+    }
+  }
 
 .login-card,.signup-card{
   width:80%;
@@ -331,11 +348,6 @@ a.btn, a.btn:hover{
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   padding:5rem 3rem;
-}
-@media (min-width:416px){
-  .glass-card{
-    padding:3rem;
-  }
 }
 
 .glass-card.glass-card-hoverable:hover{
