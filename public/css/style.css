@@ -113,11 +113,11 @@ a.btn, a.btn:hover{
   justify-content:center;
   padding: 1.5rem 1rem 0.5rem 1rem; 
 }
-@media (min-width:745px){
-  .navbar{
-    justify-content:space-between;
+  @media all and (min-width:745px){
+    .navbar{
+      justify-content:space-between;
+    }
   }
-}
 
 .navbar-bg {
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -138,11 +138,16 @@ a.btn, a.btn:hover{
   font-weight:300;
   letter-spacing: 0.05rem;
 }
-@media (min-width:765px){
-  .site-title-container{
-    padding-left:1.5rem;
+  @media all and (min-width:765px){
+    .site-title-container{
+      padding-left:1.5rem;
+    }
   }
-}
+  @media all and (min-width:1279px){
+    .site-title-container{
+      padding-left:2.5rem;
+    }
+  }
 
 .site-title-logo{
   display:flex;
@@ -224,13 +229,81 @@ a.btn, a.btn:hover{
     }
   }
 
-.login-card,.signup-card{
-  width:80%;
+.login-card{
+  width:100%;
   height:100%;
 }
+  @media all and (min-width: 1023px){
+    .login-card{
+      width:80%;
+      padding: 5rem 5rem !important;
+    }
+  }
 
 .login-info{
-  width:60%;
+  width:100%;
+}
+  @media all and (min-width:765px){
+    .login-info{
+      width:75%;
+      margin-top:1.5rem;
+    }
+  }
+  @media all and (min-width:1800px){
+    .login-info{
+      width:60%;
+    }
+  }
+
+  @media all and (max-width:1023px){
+    .signup-card{
+      padding: 2rem 3rem !important;
+    }
+  }
+  @media all and (min-width:1023px){
+    .signup-card{
+      width:85%;
+      padding: 3rem 3rem !important;
+    }
+  }
+  @media all and (min-width:1439px){
+    .signup-card{
+      width:75%;
+    }
+  }
+  
+  .signup-card h1{
+    font-size:1.5rem;
+  }
+  @media all and (min-width:765px){
+    .signup-card h1{
+      font-size:1.5rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .signup-card h1{
+      font-size:2rem;
+    }
+  }
+
+.signup-info{
+  width:100%;
+}
+@media all and (min-width:765px){
+  .signup-info{
+    width:70%;
+  }
+}
+@media all and (min-width:1800px){
+  .signup-info{
+    width:60%;
+  }
+}
+
+@media all and (min-width: 1023px){
+  .signup-info .btn{
+    padding: 0.25rem 3rem;
+  }
 }
 
 .profile-content{
@@ -348,6 +421,11 @@ a.btn, a.btn:hover{
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   padding:5rem 3rem;
+}
+@media all and (max-width:374px){
+  .glass-card{
+    padding: 5rem 2rem;
+  }
 }
 
 .glass-card.glass-card-hoverable:hover{

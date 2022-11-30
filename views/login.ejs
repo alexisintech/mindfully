@@ -4,7 +4,7 @@
   <div class="h-100 container d-flex align-items-center justify-content-center">
     <div class="container login-card glass-card">
       <h1 class="text-center">Login</h1>
-      <section class="login-info mt-4">
+      <section class="login-info">
         <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
         <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %> <% } %> <% if (locals.messages.info) { %> <%
