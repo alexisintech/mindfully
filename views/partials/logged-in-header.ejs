@@ -33,18 +33,14 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body class="user-bg">
-    <nav class="navbar navbar-expand-lg navbar-light transparent rounded fixed-top">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample10">
-        <ul class="w-100 navbar-nav justify-content-between align-items-center">
-          <li class="col-3 site-title nav-item d-flex align-items-center" id="guest-site-title">
-            <a class="nav-link" href="/profile">
-              <img id="site-logo" src="/imgs/whitebrain.png" alt=""> 
-              Mindfully 
-              <span class="sr-only">(current)</span>
+    <nav class="navbar logged-in-nav transparent fixed-top">
+        <ul class="w-100 justify-content-between align-items-center">
+          <li class="site-title-container">
+            <a class="site-title-logo" href="/profile">
+              <div class="site-logo-container">
+                <img id="site-logo" src="/imgs/whitebrain.png" alt=""> 
+              </div>
+              <span id="site-title">Mindfully</span>
             </a>
           </li>
           <li class="nav-item navbar-options col-3 d-flex justify-content-end gap-2">
@@ -66,7 +62,6 @@
             </div>
           </li>
         </ul>
-      </div>
     </nav>
 
   </body>
