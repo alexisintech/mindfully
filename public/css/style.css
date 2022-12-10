@@ -109,21 +109,15 @@ a.btn, a.btn:hover{
   outline: none;
 }
 
-.btn{
-  padding: 0.375rem 2rem;
+.navbar {
+  justify-content:center;
+  padding: 1.5rem 1rem 0.5rem 1rem; 
 }
-
-.btn-primary {
-  color: #fff;
-  background-color: var(--main);
-  border-color: var(--main);
-}
-
-.navbar-nav{
-  font-size:1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.05rem;
-}
+  @media all and (min-width:745px){
+    .navbar{
+      justify-content:space-between;
+    }
+  }
 
 .navbar-bg {
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -137,15 +131,60 @@ a.btn, a.btn:hover{
   color: white;
 }
 
-#site-logo{
-  width: 18%;
-  padding-bottom: 2px;
-  margin-right: 0.3rem;
+.navbar-ul{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-left:0.5rem;
 }
 
-.site-title{
-  font-size:1.8rem;
-  padding-left: 2rem;
+.site-title-container{
+  display: flex;
+  align-items: center;
+  font-size:1.2rem;
+  font-weight:300;
+  letter-spacing: 0.05rem;
+}
+  @media all and (min-width:765px){
+    .site-title-container{
+      font-size:1.8rem;
+      padding-left:1.5rem;
+    }
+  }
+  @media all and (min-width:1279px){
+    .site-title-container{
+      padding-left:2.5rem;
+    }
+  }
+
+.site-title-logo{
+  display:flex;
+  align-items:center;
+  gap:0.3rem;
+}
+  @media all and (min-width:765px){
+    .site-title-logo{gap:0.5rem;
+    }
+  }
+
+
+.site-logo-container{
+  width:28px;
+}
+  @media all and (min-width:765px){
+    .site-logo-container{
+      width:40px;
+    }
+  }
+
+#site-logo{
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+#site-title{
+  color:white;
 }
 
 .navbar-options{
@@ -167,12 +206,16 @@ a.btn, a.btn:hover{
 
 .masthead {
   /* height:100%; */
-  padding:10rem 0;
+  padding:7rem 0;
+}
+@media all and (min-width:765px){
+  .masthead{
+    padding:10rem 0;
+  }
 }
 
 .index-container,.login-card,.signup-card{
   width:100%;
-  height:50%;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -180,13 +223,111 @@ a.btn, a.btn:hover{
   text-align:center;
 }
 
-.login-card,.signup-card{
-  width:80%;
+.index-buttons-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap:1rem;
+  margin-top:0.5rem;
+  margin-bottom:1rem;
+}
+  @media (min-width:416px){
+    .index-buttons-container{
+      gap:1.2rem;
+      margin-top:1rem;
+    }
+  }
+  @media all and (min-width:765px){
+    .index-buttons-container{
+      gap:1.6rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .index-buttons-container{
+      margin-top:1.5rem;
+    }
+  }
+  @media all and (min-width:1439px){
+    .index-buttons-container{
+      gap:2rem;
+    }
+  }
+
+.login-card{
+  width:100%;
   height:100%;
 }
+  @media all and (min-width: 1023px){
+    .login-card{
+      width:80%;
+      padding: 5rem 5rem !important;
+    }
+  }
 
 .login-info{
-  width:60%;
+  width:100%;
+}
+  @media all and (min-width:765px){
+    .login-info{
+      width:75%;
+      margin-top:1.5rem;
+    }
+  }
+  @media all and (min-width:1800px){
+    .login-info{
+      width:60%;
+    }
+  }
+
+  @media all and (max-width:1023px){
+    .signup-card{
+      padding: 2rem 3rem !important;
+    }
+  }
+  @media all and (min-width:1023px){
+    .signup-card{
+      width:85%;
+      padding: 3rem 3rem !important;
+    }
+  }
+  @media all and (min-width:1439px){
+    .signup-card{
+      width:75%;
+    }
+  }
+  
+  .signup-card h1{
+    font-size:1.5rem;
+  }
+  @media all and (min-width:765px){
+    .signup-card h1{
+      font-size:1.5rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .signup-card h1{
+      font-size:2rem;
+    }
+  }
+
+.signup-info{
+  width:100%;
+}
+@media all and (min-width:765px){
+  .signup-info{
+    width:70%;
+  }
+}
+@media all and (min-width:1800px){
+  .signup-info{
+    width:60%;
+  }
+}
+
+@media all and (min-width: 1023px){
+  .signup-info .btn{
+    padding: 0.25rem 3rem;
+  }
 }
 
 .profile-content{
@@ -216,10 +357,16 @@ a.btn, a.btn:hover{
 }
 
 .greeting{
-  font-size:4.5rem;
   font-style: italic;
-  line-height: 4rem;
+  font-size:2rem;
+  /* line-height: 4rem; */
 }
+  @media all and (min-width:1800px){
+   .greeting{
+    font-size:4.5rem;
+    line-height:4rem;
+   } 
+  }
 
 .welcome-buttons-container{
   width:65%;
@@ -234,10 +381,16 @@ a.btn, a.btn:hover{
 }
 
 .todays-entry-button, .past-entries-button{
-  font-size:1.2rem;
   border-radius:10px;
-  padding: 0.5rem 3rem;
+  font-size:0.8rem;
+  padding: 0.3rem 1rem;
 }
+  @media all and (min-width:1800px){
+    .todays-entry-button, .past-entries-button{
+      font-size:1.2rem;
+      padding: 0.5rem 3rem;
+    }
+  }
 
 /* .streak-container{
   padding:1rem;
@@ -303,7 +456,12 @@ a.btn, a.btn:hover{
   -webkit-backdrop-filter: blur( 5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-  padding:3rem;
+  padding:5rem 3rem;
+}
+@media all and (max-width:374px){
+  .glass-card{
+    padding: 5rem 2rem;
+  }
 }
 
 .glass-card.glass-card-hoverable:hover{

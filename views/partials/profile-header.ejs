@@ -33,40 +33,35 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body class="profile-bg">
-    <nav class="navbar navbar-expand-lg navbar-light transparent rounded fixed-top">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample10">
-        <ul class="w-100 navbar-nav justify-content-between align-items-center">
-          <li class="col-3 site-title nav-item d-flex align-items-center" id="guest-site-title">
-            <a class="nav-link" href="/profile">
+    <nav class="navbar logged-in-nav transparent fixed-top">
+      <ul class="navbar-ul w-100 justify-content-between align-items-center">
+        <li class="site-title-container">
+          <a class="site-title-logo" href="/profile">
+            <div class="site-logo-container">
               <img id="site-logo" src="/imgs/whitebrain.png" alt=""> 
-              Mindfully 
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item navbar-options col-3 d-flex justify-content-end gap-2">
-              <a class="nav-link" href="/profile">
-                <div class="fa-solid fa-user navbar-icon"></div>
-                Me
-              </a>
-            <div class="dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <div class="fa-solid fa-gear navbar-icon"></div>
-                Settings
-              </a>
-              <div class="dropdown-menu dropdown-menu-end">
-                  <a href="/settings/entries" class="dropdown-item">My entries</a>
-                  <a href="/settings/prompts" class="dropdown-item">My prompts</a>
-                  <div class="dropdown-divider"></div>
-                  <a href="/logout" class="dropdown-item">Logout</a>
-              </div>
             </div>
-          </li>
-        </ul>
-      </div>
+            <span id="site-title">Mindfully</span>
+          </a>
+        </li>
+        <li class="d-flex justify-content-end gap-2">
+            <a class="nav-link" href="/profile">
+              <div class="fa-solid fa-user navbar-icon"></div>
+              Me
+            </a>
+          <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              <div class="fa-solid fa-gear navbar-icon"></div>
+              Settings
+            </a>
+            <div class="dropdown-menu dropdown-menu-end">
+                <a href="/settings/entries" class="dropdown-item">My entries</a>
+                <a href="/settings/prompts" class="dropdown-item">My prompts</a>
+                <div class="dropdown-divider"></div>
+                <a href="/logout" class="dropdown-item">Logout</a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </nav>
 
   </body>
