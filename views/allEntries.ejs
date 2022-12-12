@@ -1,9 +1,9 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="d-flex flex-column align-items-center justify-content-center gap-3">
-      <div class="entries-container container glass-card d-flex flex-column justify-content-center align-items-center text-center gap-5">
+  <div class="entries-content">
+    <div class="entries-container">
+      <div class="entries container glass-card">
         <h2 class="m-0"><%= username %>'s entries</h2>
         <ul class="w-100 d-flex flex-column gap-4 list-unstyled">
           <% for(var i=0; i<entries.length; i++) {%>

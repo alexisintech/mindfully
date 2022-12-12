@@ -1,10 +1,10 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center">
-    <div class="h-100 w-50 d-flex flex-column align-items-left justify-content-center gap-3">
+  <div class="blank-entry-content">
+    <div class="blank-entry-container">
       <h2>Mind dump:</h2>
-      <form action="/addEntry/blank/createEntry" method="POST" class="d-flex flex-column">
+      <form action="/addEntry/blank/createEntry" method="POST" class="d-flex flex-column w-100">
         <div class="">
             <textarea id="blankTextEntry" name="blankTextEntry" class="form-control z-depth-1 textarea-shadow p-4" rows="18" placeholder="Write without judgement..." required></textarea>
         </div>

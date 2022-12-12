@@ -2612,14 +2612,19 @@ input[type="button"].btn-block {
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: white;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem; }
+  @media all and (min-width:765px){
+    .dropdown-menu{
+      font-size:1rem;
+    }
+  }
 
 .dropdown-menu-left {
   right: auto;
@@ -3429,6 +3434,7 @@ input[type="button"].btn-block {
   display: block;
   font-size:0.8rem;
   padding:0;
+  color:white;
 }
   @media all and (min-width:765px){
     .nav-link{
@@ -8279,7 +8285,7 @@ h1, h2, h3, h4, h5,
 
 .entry-card {
   appearance:none;
-  padding: 20px 0;
+  padding: 20px 15px;
   max-width: 100%;
   display: block;
   background-image: linear-gradient(rgba(24, 179, 171, 0.7), rgb(30, 116, 121, 0.7));
@@ -8319,15 +8325,15 @@ h1, h2, h3, h4, h5,
 
 .entry-count, .entry-name {
   display: inline;
-  padding: 0 10px;
-  font-size: 1.2rem; }
+  font-size: 1rem; }
+  @media all and (min-width:765px){
+    .entry-count, .entry-name{
+      font-size: 1.2rem;
+    }
+  }
 
 .entry-count {
-  color: rgba(24, 179, 171, 0.877);
-  text-align: right; }
-
-.entry-name {
-  padding-right: 0;
+  /* padding-right: 0; */
   text-align: left; }
 
 .entry-click{

@@ -69,13 +69,11 @@ a.btn, a.btn:hover{
   text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.25) !important;
   cursor: pointer;
   direction: ltr;
-  font-size: 1rem;
   font-style: italic;
   letter-spacing: 0.025em;
   font-weight: 400;
   min-width: 30px;
   overflow: visible;
-  padding: 0.5rem 1.5rem;
   text-align: center;
   vertical-align: baseline;
   user-select: none;
@@ -85,7 +83,15 @@ a.btn, a.btn:hover{
   -webkit-transition: .2s ease all;
   -o-transition: .2s ease all;
   transition: .2s ease all;
+  font-size: 0.7rem;
+  padding: 0.5rem 1rem;
 }
+  @media all and (min-width:765px){
+    .button-15{
+      font-size: 1rem;
+      padding: 0.5rem 1.5rem;
+    }
+  }
 
 .button-15:hover {
   background-image: linear-gradient(rgb(81, 169, 238), rgb(20, 123, 205));
@@ -220,7 +226,13 @@ a.btn, a.btn:hover{
 }
 
 .login-masthead.masthead, .signup-masthead.masthead{
-  padding:2rem 0;
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+
+.signup-masthead.masthead{
+  margin-top:5rem;
 }
 
 .index-container,.login-card,.signup-card{
@@ -263,16 +275,20 @@ a.btn, a.btn:hover{
   }
 
 .login-card-container, .signup-card-container{
-  height:100;
+  min-height:50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+}
+
+.signup-card-container{
+  height:100%;
 }
 
 .login-card{
   width:100%;
   height:100%;
+  max-height:350px;
 }
   @media all and (min-width: 1023px){
     .login-card{
@@ -408,10 +424,10 @@ a.btn, a.btn:hover{
   width:65%;
   display:flex;
   flex-direction:column;
-  margin-top:1.2rem;
-  margin-bottom:0.5rem;
   justify-content:center;
   align-items:center;
+  margin-top:1.2rem;
+  margin-bottom:0.5rem;
   gap:0.8rem;
 }
   @media all and (min-width:765px){
@@ -535,38 +551,40 @@ a.btn, a.btn:hover{
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.add-new-entry-content{
+  height:100%;
+}
+
 .new-entry-card{
   display:flex;
   align-items:center;
   justify-content:center;
-  min-width:400px;
-  min-height:400px;
-  color:white;
-  font-size:x-large;
   text-align:center;
+  color:white;
+  font-size:0.8rem;
   margin: 0;
+  padding:3rem 1rem;
+  min-height:200px;
 }
-
-.container-for-prompts-container{
-  width:50%;
-}
-
-.prompts-container{
-  display: flex;
-  flex-direction: column;
-  padding: 4rem 8rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap:2rem;
-}
+  @media all and (min-width:765px){
+    .new-entry-card{
+      min-width:400px;
+      min-height:400px;
+      font-size:x-large;
+    }
+  }
 
 .prompts-nav{
   width:100%;
   display:flex;
   justify-content:space-around;
-  padding: 0 6rem;
+  padding: 0 1rem;
 }
+  @media all and (min-width:765px){
+    .prompts-nav{
+      padding:0 6rem;
+    }
+  }
 
 .hidden{
   display: none;
@@ -577,10 +595,12 @@ a.btn, a.btn:hover{
 }
 
 .prompt-choices-container{
+  width:100%;
   display:flex;
   flex-direction: column;
-  margin: 2rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
   gap:3rem;
+  padding: 0 0.5rem;
 }
 
 .prompts-container h3{
@@ -594,9 +614,14 @@ a.btn, a.btn:hover{
 }
 
 .prompts-container p{
-  font-size:1.5rem;
+  font-size:0.8rem;
   margin:0;
 }
+  @media all and (min-width:765px){
+    .prompts-container{
+      font-size:1.5rem;
+    }
+  }
 
 .prompts-container a:hover{
   color:rgb(255, 255, 255, 0.6) !important;
@@ -604,11 +629,20 @@ a.btn, a.btn:hover{
 
 .add-prompt-container{
   width:70%;
-  padding: 2rem;
+  padding: 1rem;
 }
+  @media all and (min-width:765px){
+    .add-prompt-container{
+      padding:1rem;
+    }
+  }
 
 .create-prompt-form{
   width:80%;
+}
+
+.create-prompt-form .form-control{
+  font-size:0.7rem;
 }
 
 textarea::placeholder{
@@ -625,23 +659,29 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 #prompt-select{
   cursor:pointer;
   color:white;
-  font-size:1.2rem;
+  font-size:0.8rem;
   margin-bottom:1rem;
-  padding:1rem 1.5rem;
+  padding:0.8rem 1rem;
 }
+  @media all and (min-width:765px){
+    #prompt-select{
+      font-size:1.2rem;
+      padding:1rem 1.5rem;
+    }
+  }
 
 #prompt-select option{
   color:black;
 }
 
 .add-new-entry-container{
-  gap:5rem;
+  gap:1rem;
 }
 
 .add-entry-container{
   position:absolute;
   bottom:20px;
-  right:78px;
+  right:105px;
 }
 @media all and (min-width:765px){
   .add-entry-container{
@@ -649,39 +689,117 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   }
 }
 
-.unique-entry-content-container{
+.unique-entry-container{
   min-width: 50%;
 }
 
-.unique-entry-container{
-  padding: 3rem 6rem;
+.unique-entry{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
 }
+  @media all and (min-width:765px){
+    .unique-entry{
+      padding:3rem 6rem;
+    }
+  }
 
 .unique-entry-header{
   display:flex;
   justify-content:space-between;
   border-bottom:1px solid white;
   padding-bottom:0.5rem;
-  margin-bottom:2rem;
+  margin-bottom:1rem;
 }
-
+  @media all and (min-width:765px){
+    .unique-entry-header{
+      margin-bottom:2rem;
+    }
+  }
+  
 .unique-entry-header p{
-  font-size:2rem;
+  font-size:1rem;
   margin:0;
 }
+  @media all and (min-width:765px){
+    .unique-entry-header p{
+      font-size:2rem;
+    }
+  }
 
 .unique-entry-prompt{
   font-style:italic;
-  font-size:1.3rem;
+  font-size:0.8rem;
+  margin-bottom:0.3rem;
+}
+  @media all and (min-width:765px){
+    .unique-entry-prompt{
+      font-size:1.3rem;
+    }
+  }
+
+.unique-entry-text{
+  font-size:0.7rem;
 }
 
-.entries-container{
-  padding: 4rem 10rem;
+.entries-content, .prompts-content, .unique-entry-content, .add-new-entry-content, .blank-entry-content, .prompt-entry-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.entries-container ul {
-  padding-top:2rem;
+.blank-entry-content, .blank-entry-container, .prompt-entry-content, .prompt-entry-container{
+  flex-direction: column;
 }
+
+.entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container, .blank-entry-container, .prompt-entry-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+}
+
+.prompts-container{
+  flex-direction:column;
+  gap:2.5rem;
+}
+  @media all and (min-width:765px){
+    .prompts-container{
+      width:50%;
+      gap:4rem;
+    }
+  }
+
+.prompts-container h2{
+  font-size:1rem;
+}
+
+.entries, .prompts{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap:2rem;
+  padding: 2rem 1rem;
+}
+  @media all and (min-width:765px){
+    .entries{
+      padding:4rem 10rem;
+    }
+    .prompts{
+      padding:4rem 8rem;
+    }
+  }
+
+.entries h2{
+  font-size:0.8rem;
+}
+  @media all and (min-width:765px){
+    .entries h2{
+      font-size:2rem;
+    }
+  }
 
 .entries-li{
   display:flex;
@@ -705,9 +823,14 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   flex-direction: row;
   align-items:center;
   width:100%;
-  gap:3rem;
+  gap:1.5rem;
   color:rgb(255, 255, 255, 0.8) !important;
 }
+  @media all and (min-width:765px){
+    .entries-a{
+      gap:3rem;
+    }
+  }
 
 .entries-a:hover{
   color: white !important;
@@ -716,24 +839,48 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 .entries-date{
   display: flex;
   flex-direction: column;
-  padding:1rem;
+  padding:0.5rem;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   border-radius: 10px;
   box-shadow: 3px 3px 9px 2px rgb(0, 0, 0, 0.22);
   text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25) !important;
 }
+  @media all and (min-width:765px){
+    .entries-date{
+      padding:1rem;
+    }
+  }
 
 .entries-date > p {
-  font-size:1.5rem;
+  font-size:0.8rem;
   margin:0;
 }
+  @media all and (min-width:765px){
+    .entries-date > p{
+      font-size:1.5rem;
+    }
+  }
 
 .peekaboo-text{
   width:100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; 
-  padding-right:3rem;
+  padding-right:1.5rem;
   text-align:left;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25) !important;
+  font-size:0.6rem;
+}
+  @media all and (min-width:765px){
+    .peekaboo-text{
+      padding-right:3rem;
+    }
+  }
+
+.woops{
+  text-align:center;
+}
+
+.woops h2{
+  font-size:1rem;
 }

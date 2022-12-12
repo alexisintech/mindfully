@@ -1,9 +1,9 @@
 <%- include('partials/logged-in-header') -%>
 
 <main class="masthead">
-  <div class="d-flex h-100 align-items-center justify-content-center">
-    <div class="h-100 w-50 d-flex flex-column align-items-left justify-content-center gap-3">
-      <form action="/prompts/createEntry" method="POST" class="d-flex flex-column">
+  <div class="prompt-entry-content">
+    <div class="prompt-entry-container">
+      <form action="/prompts/createEntry" method="POST" class="d-flex flex-column w-100">
         <select name="prompts" id="prompt-select" class="glass-card glass-card-hoverable">
           <% for(var i=0; i<prompts.length; i++) {%>
             <option><%= prompts[i].text %></option>

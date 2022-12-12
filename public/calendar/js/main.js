@@ -188,8 +188,8 @@ function show_entries(entries, month, day, year) {
     // If there are no entries for this date, notify the user
     if(entries.length===0) {
         var entry_card = $("<div class='entry-card'></div>");
-        var entry_name = $("<div class='entry-name'>There are no entries for "+month+" "+day+", "+year+".</div>");
-        $(entry_card).append(entry_name);
+        var entry_count = $("<div class='entry-count'>There are no entries for "+month+" "+day+", "+year+".</div>");
+        $(entry_card).append(entry_count);
         $(".entry-container").append(entry_card);
     } else if(entries.length===1){
         var entry_card = $("<div class='entry-card has-entry'></div>");
