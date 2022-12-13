@@ -3439,6 +3439,7 @@ input[type="button"].btn-block {
   @media all and (min-width:765px){
     .nav-link{
       padding: 0.5rem 1rem;
+      font-size:1rem;
     }
   }
   .nav-link:hover, .nav-link:focus {
