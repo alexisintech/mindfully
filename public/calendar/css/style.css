@@ -3442,6 +3442,12 @@ input[type="button"].btn-block {
       font-size:1rem;
     }
   }
+  @media all and (min-width:1439px){
+    .nav-link{
+      padding: 0.5rem 1rem;
+      font-size:1rem;
+    }
+  }
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
   .nav-link.disabled {

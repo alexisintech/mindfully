@@ -389,6 +389,11 @@ a.btn, a.btn:hover{
     padding: 0.25rem 3rem;
   }
 }
+@media all and (min-width: 1023px){
+  .signup-info .btn{
+    padding: 0.25rem 4rem;
+  }
+}
 
 .profile-content{
   min-width:50%;
@@ -398,6 +403,11 @@ a.btn, a.btn:hover{
   justify-content: center;
   gap:3rem;
 }
+  @media all and (min-width:1023px){
+    .profile-content{
+      width:65%;
+    }
+  }
 
 .user-info-container, .todays-quote-container{
   display:flex;
@@ -407,9 +417,19 @@ a.btn, a.btn:hover{
   text-align:center;
   padding: 4rem 2rem !important;
 }
-  @media all and (min-width:1800px){
+  @media all and (min-width:765px){
     .user-info-container, .todays-quote-container{
       padding: 4rem 3rem !important;
+    }
+  }
+  @media all and (min-width:1439px){
+    .todays-quote-container{
+      padding: 4.5rem 8rem !important;
+    }
+  }
+  @media all and (min-width:1879px){
+    .todays-quote-container{
+      padding: 5rem 10rem !important;
     }
   }
 
@@ -484,10 +504,26 @@ a.btn, a.btn:hover{
       width:80%;
     }
   }
-  @media all and (min-width:1800px){
+  @media all and (min-width:765px){
+    .welcome-buttons-container{
+      width:75%;
+    }
+  }
+  @media all and (min-width:1279px){
+    .welcome-buttons-container {
+      width: 60%;
+  }
+  }
+  @media all and (min-width:1439px){
+    .welcome-buttons-container{
+      width:55%;
+    }
+  }
+  @media all and (min-width:1879px){
     .welcome-buttons-container{
       margin-top:3rem;
       margin-bottom:1.5rem;
+      width:60%;
     }
   }
 
@@ -576,6 +612,11 @@ a.btn, a.btn:hover{
     font-size:1.3rem;
   }
 }
+@media all and (min-width:1879px){
+  .todays-quote-container p{
+    font-size:1.6rem;
+  }
+}
 
 .glass-card{
   background: rgba(255, 255, 255, 0.2);
@@ -617,14 +658,37 @@ a.btn, a.btn:hover{
   color:white;
   font-size:0.8rem;
   margin: 0;
-  padding:3rem 1rem;
+  padding:3rem 3rem;
   min-height:200px;
 }
-  @media all and (min-width:765px){
+  @media all and (min-width:413px){
     .new-entry-card{
-      min-width:400px;
-      min-height:400px;
-      font-size:x-large;
+      padding:3rem 4.5rem;
+    }
+  }
+  @media all and (min-width:765px){
+    .new-entry-card {
+      min-width: 200px;
+      min-height: 200px;
+      font-size: 1.2rem;
+      padding: 6rem 3rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .new-entry-card {
+      font-size: 1.3rem;
+      padding:6rem 3rem;
+    }
+  }
+  @media all and (min-width:1279px){
+    .new-entry-card{
+      font-size:1.4rem;
+      padding:8rem 3rem;
+    }
+  }
+  @media all and (min-width:1879px){
+    .new-entry-card{
+      font-size:1.6rem;
     }
   }
 
@@ -636,7 +700,17 @@ a.btn, a.btn:hover{
 }
   @media all and (min-width:765px){
     .prompts-nav{
-      padding:0 7rem;
+      padding:0 6rem;
+    }
+  }
+  @media all and (min-width:1279px){
+    .prompts-nav {
+      padding: 0 9rem;
+    }
+  }
+  @media all and (min-width:1439px){
+    .prompts-nav {
+      padding: 0 11rem;
     }
   }
 
@@ -656,6 +730,11 @@ a.btn, a.btn:hover{
   gap:3rem;
   padding: 0 0.5rem;
 }
+  @media all and (min-width:1439px){
+    .prompt-choices-container{
+      margin-top:2rem;
+    }
+  }
 
 .prompts-container h3{
   color:rgb(255, 255, 255, 0.6);
@@ -688,6 +767,16 @@ a.btn, a.btn:hover{
   @media all and (min-width:765px){
     .add-prompt-container{
       padding:1.2rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .add-prompt-container {
+      padding: 2rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .add-prompt-container {
+      padding: 2.5rem;
     }
   }
 
@@ -730,7 +819,35 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 
 .add-new-entry-container{
   gap:1rem;
+  flex-direction:column;
 }
+  @media all and (min-width:765px){
+    .add-new-entry-container{
+      flex-direction: row;
+      width:75% !important;
+    }
+  }
+  @media all and (min-width:1023px){
+    .add-new-entry-container{
+      width:65% !important;
+    }
+  }
+  @media all and (min-width:1279px){
+    .add-new-entry-container {
+      width: 60% !important;
+    }
+  }
+  @media all and (min-width:1439px){
+    .add-new-entry-container{
+      gap:2.5rem;
+    }
+  }
+  @media all and (min-width:1879px){
+    .add-new-entry-container{
+      width:50% !important;
+      gap:3.5rem;
+    }
+  }
 
 .add-entry-container{
   position:absolute;
@@ -759,7 +876,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 }
   @media all and (min-width:765px){
     .unique-entry{
-      padding:3rem 6rem;
+      padding:3rem 3rem;
+    }
+  }
+  @media all and (min-width:1439px){
+    .unique-entry{
+      padding: 4rem 5rem;
     }
   }
 
@@ -800,6 +922,21 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 .unique-entry-text{
   font-size:0.7rem;
 }
+  @media all and (min-width:413px){
+    .unique-entry-text{
+      font-size:0.8rem;
+    }
+  }
+  @media all and (min-width:765px){
+    .unique-entry-text{
+      font-size:1rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .unique-entry-text{
+      font-size:1.2rem;
+    }
+  }
 
 .entries-content, .prompts-content, .unique-entry-content, .add-new-entry-content, .blank-entry-content, .prompt-entry-content{
   display: flex;
@@ -811,15 +948,36 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   flex-direction: column;
 }
 
-.entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container, .blank-entry-container, .prompt-entry-container{
+.blank-entry-container, .prompt-entry-container{
+  display: flex;
+  justify-content: center;
+  width:90%;
+}
+
+.entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container{
   display: flex;
   justify-content: center;
   align-items: center;
   width:90%;
 }
+  @media all and (min-width:765px){
+    .entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container, .blank-entry-container, .prompt-entry-container{
+      width:80%;
+    }
+  }
   @media all and (min-width:1023px){
     .entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container, .blank-entry-container, .prompt-entry-container{
       width:75%;
+    }
+  }
+  @media all and (min-width:1279px){
+    .entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container, .blank-entry-container, .prompt-entry-container{
+      width:70%;
+    }
+  }
+  @media all and (min-width:1439px){
+    .entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container, .blank-entry-container, .prompt-entry-container{
+      width:60%;
     }
   }
 
@@ -875,23 +1033,34 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       padding:4rem 3rem;
     }
   }
+  @media all and (min-width:1439px){
+    .entries {
+      padding: 4rem 6rem;
+      gap: 4rem;
+    }
+  }
 
-.entries h2, .entries-date > p{
+.entries h2, .entries-date > p, .woops h2{
   font-size:0.8rem;
   margin:0;
 }
+  @media all and (min-width:374px){
+    .entries h2, .woops h2{
+      font-size:1rem;
+    }
+  }
   @media all and (min-width:413px){
-    .entries h2, .entries-date > p{
+    .entries h2, .entries-date > p, .woops h2{
       font-size:1.2rem;
     }
   }
   @media all and (min-width:765px){
-    .entries h2, .entries-date > p{
+    .entries h2, .entries-date > p, .woops h2{
       font-size:1.5rem;
     }
   }
   @media all and (min-width:1023px){
-    .entries h2{
+    .entries h2, .woops h2{
       font-size:2rem;
     }
   }
@@ -921,7 +1090,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   gap:1.5rem;
   color:rgb(255, 255, 255, 0.8) !important;
 }
-  @media all and (min-width:765px){
+  @media all and (min-width:1023px){
+    .entries-a{
+      gap:2rem;
+    }
+  }
+  @media all and (min-width:1023px){
     .entries-a{
       gap:2.5rem;
     }
@@ -968,16 +1142,8 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       padding-right:3rem;
     }
   }
-  @media all and (min-width:1023px){
+  @media all and (min-width:1279px){
     .peekaboo-text{
       font-size:1.2rem;
     }
   }
-
-.woops{
-  text-align:center;
-}
-
-.woops h2{
-  font-size:1rem;
-}
