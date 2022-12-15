@@ -618,7 +618,7 @@ a.btn, a.btn:hover{
 }
 @media all and (min-width:1879px){
   .todays-quote-container p{
-    font-size:1.6rem;
+    font-size:1.4rem;
   }
 }
 
@@ -672,27 +672,21 @@ a.btn, a.btn:hover{
   }
   @media all and (min-width:765px){
     .new-entry-card {
-      min-width: 200px;
-      min-height: 200px;
-      font-size: 1.2rem;
-      padding: 6rem 3rem;
+      /* min-width: 200px; */
+      /* min-height: 200px; */
+      font-size: 0.8rem;
+      padding: 6rem 4rem;
     }
   }
   @media all and (min-width:1023px){
     .new-entry-card {
-      font-size: 1.3rem;
-      padding:6rem 3rem;
+      font-size: 1.2rem;
+      padding:7rem 3rem;
     }
   }
   @media all and (min-width:1279px){
     .new-entry-card{
-      font-size:1.4rem;
-      padding:8rem 3rem;
-    }
-  }
-  @media all and (min-width:1879px){
-    .new-entry-card{
-      font-size:1.6rem;
+      padding:9rem 3rem;
     }
   }
 
@@ -728,15 +722,38 @@ a.btn, a.btn:hover{
 
 .prompt-choices-container{
   width:100%;
+  height:50%;
+  overflow:scroll;
   display:flex;
   flex-direction: column;
   margin: 1rem 0 1rem 0;
   gap:3rem;
-  padding: 0 0.5rem;
+  padding: 0 1.5rem;
 }
+  @media all and (min-width:400px){
+    .prompt-choices-container{
+      padding: 0 2rem;
+    }
+  }
+  @media all and (min-width:1023px){
+    .prompt-choices-container{
+      padding: 0 4.5rem;
+    }
+  }
+  @media all and (min-width:1279px){
+    .prompt-choices-container{
+      padding: 0 5.5rem;
+    }
+  }
   @media all and (min-width:1439px){
     .prompt-choices-container{
       margin-top:2rem;
+      padding: 0 6.5rem;
+    }
+  }
+  @media all and (min-width:1800px){
+    .prompt-choices-container{
+      padding: 0 8.5rem;
     }
   }
 
@@ -828,25 +845,16 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   @media all and (min-width:765px){
     .add-new-entry-container{
       flex-direction: row;
-      width:75% !important;
-    }
-  }
-  @media all and (min-width:1023px){
-    .add-new-entry-container{
       width:65% !important;
     }
   }
   @media all and (min-width:1279px){
     .add-new-entry-container {
       width: 60% !important;
-    }
-  }
-  @media all and (min-width:1439px){
-    .add-new-entry-container{
       gap:2.5rem;
     }
   }
-  @media all and (min-width:1879px){
+  @media all and (min-width:1800px){
     .add-new-entry-container{
       width:50% !important;
       gap:3.5rem;
@@ -942,13 +950,13 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     }
   }
 
-.entries-content, .prompts-content, .unique-entry-content, .add-new-entry-content, .blank-entry-content, .prompt-entry-content{
+.entries-content, .prompts-content, .unique-entry-content, .add-new-entry-content, .blank-entry-content, .prompt-entry-content, .about-content{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.blank-entry-content, .blank-entry-container, .prompt-entry-content, .prompt-entry-container{
+.blank-entry-content, .blank-entry-container, .prompt-entry-content, .prompt-entry-container, .about-container{
   flex-direction: column;
 }
 
@@ -958,7 +966,7 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   width:90%;
 }
 
-.entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container{
+.entries-container, .prompts-container, .unique-entry-container, .add-new-entry-container, .about-container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1043,6 +1051,10 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       gap: 4rem;
     }
   }
+
+.prompts{
+  max-height:700px;
+}
 
 .entries h2, .entries-date > p, .woops h2{
   font-size:0.8rem;
@@ -1151,3 +1163,27 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       font-size:1.2rem;
     }
   }
+
+.logo-container{
+  display: flex;
+  width:100px;
+  height:100px;
+}
+
+#about-logo{
+  display:flex;
+  width:100%;
+}
+
+.about-p-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.about-container p{
+  font-size:1.2rem;
+}
+
+.lg-font{
+  font-size:1.3rem !important;
+}

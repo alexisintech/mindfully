@@ -9,5 +9,3 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 router.post("/createEntry", ensureAuth, promptsController.createEntry);
 
 module.exports = router;
-
-module.exports = router;

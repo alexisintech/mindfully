@@ -27,8 +27,6 @@ const EntrySchema = new mongoose.Schema({
     default: day,
   },
   month:{
-    // type: String,
-    // default: new Intl.DateTimeFormat('en-US', options).format(date),
     type: Number,
     default: month,
   },
