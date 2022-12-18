@@ -783,11 +783,12 @@ a.btn, a.btn:hover{
 }
 
 .add-prompt-container{
-  width:70%;
+  width:85%;
   padding: 1rem;
 }
   @media all and (min-width:765px){
     .add-prompt-container{
+      width:70%;
       padding:1.2rem;
     }
   }
@@ -803,12 +804,17 @@ a.btn, a.btn:hover{
   }
 
 .create-prompt-form{
-  width:80%;
+  width:87%;
 }
 
 .create-prompt-form .form-control{
-  font-size:1rem;
+  font-size:0.8rem;
 }
+  @media all and (min-width:764px){
+    .create-prompt-form .form-control{
+      font-size:1rem;
+    }
+  }
 
 textarea::placeholder{
   font-style:italic;
