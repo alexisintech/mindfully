@@ -57,7 +57,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Use flash messages for errors, info, ect...
+// Use flash messages for errors, info, etc...
 app.use(flash());
 
 // Setup Routes For Which The Server Is Listening
