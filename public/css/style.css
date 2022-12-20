@@ -730,6 +730,7 @@ a.btn, a.btn:hover{
   margin: 1rem 0 1rem 0;
   gap:3rem;
   padding: 0 1.5rem;
+  overflow-x:hidden;
 }
   @media all and (min-width:400px){
     .prompt-choices-container{
@@ -835,6 +836,7 @@ a.btn, a.btn:hover{
       font-size:1rem;
     }
   }
+
 
 textarea::placeholder{
   font-style:italic;
