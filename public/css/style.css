@@ -1198,11 +1198,40 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     }
   }
 
+.about-container{
+  gap:2.5rem;
+}
+
+.about-container p{
+  font-size:0.8rem;
+}
+
+.about-section-1 {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.5rem;
+  margin-bottom:0.5rem;
+}
+
+.about-section-1 p{
+  margin:0;
+  font-size:0.9rem;
+  line-height:1.25rem;
+}
+
 .logo-container{
   display: flex;
-  width:100px;
-  height:100px;
+  align-items:center;
+  width:33%;
+  height:fit-content;
 }
+  @media all and (min-width:1880px){
+    .logo-container{
+      width:100px;
+      height:100px;
+    }
+  }
 
 #about-logo{
   display:flex;
@@ -1211,13 +1240,17 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 
 .about-p-section{
   display: flex;
-  flex-direction: row;
-}
-
-.about-container p{
-  font-size:1.2rem;
+  flex-direction: column;
+  text-align:left;
+  gap:0.5rem;
 }
 
 .lg-font{
-  font-size:1.3rem !important;
+  font-size:1rem;
+  line-height:1.5rem;
 }
+  @media all and (min-width:1880px){
+    .lg-font{
+      font-size:1.3rem !important;
+    }
+  }
