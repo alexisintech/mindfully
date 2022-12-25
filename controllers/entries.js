@@ -24,7 +24,7 @@ module.exports = {
   },
   getAbout: async (req,res) => {
     try {
-      res.render("about.ejs")
+      res.render("about.ejs", { quotes: quotes})
     } catch (err) {
       console.log(err);
     }
