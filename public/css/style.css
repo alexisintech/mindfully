@@ -231,9 +231,14 @@ a.btn, a.btn:hover{
     }
   }
   @media all and (min-width:765px){
-  .masthead{
-    padding:10rem 0;
+    .masthead{
+      padding:7rem 0;
+    }
   }
+  @media all and (min-width:1439px){
+    .masthead{
+      padding:10rem 0;
+    }
   }
 
 .login-masthead.masthead, .signup-masthead.masthead{
@@ -1207,6 +1212,17 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       padding: 5rem 3rem;
     }
   }
+  @media all and (min-width:1023px){
+    .about-container{
+      padding: 6rem 5rem;
+    }
+  }
+  @media all and (min-width:1279px){
+    .about-container{
+      padding: 6rem 8rem;
+      gap:6rem;
+    }
+  }
 
 .about-container p{
   font-size:0.8rem;
@@ -1231,6 +1247,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   @media all and (min-width:765px){
     .about-section-1{
       gap:2rem;
+      margin-bottom:1.5rem;
+    }
+  }
+  @media all and (min-width:1279px){
+    .about-section-1{
+      margin-bottom:2rem;
     }
   }
 
@@ -1246,6 +1268,16 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       line-height:1.75rem;
     }
   }
+  @media all and (min-width:1023px){
+    .about-section-1 p{
+      padding: 0 10rem;
+    }
+  }
+  @media all and (min-width:1279px){
+    .about-section-1 p{
+      padding: 0 16rem;
+    }
+  }
   @media all and (min-width:1800px){
     .about-section-1 p{
       font-size:1.4rem;
@@ -1259,6 +1291,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   width:33%;
   height:fit-content;
 }
+  @media all and (min-width:1023px){
+    .logo-container{
+      width:25%;
+    }
+  }
   @media all and (min-width:1800px){
     .logo-container{
       width:150px;
@@ -1309,10 +1346,20 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     align-items:flex-start;
   }
 }
+@media all and (min-width:1279px){
+  .about-section-2{
+    padding: 0 9rem;
+  }
+}
 
 @media all and (min-width:765px){
   .about-section-2 span {
     padding-right: 9rem;
+  }
+}
+@media all and (min-width:1279px){
+  .about-section-2 span{
+    padding-right:0;
   }
 }
 
@@ -1368,6 +1415,18 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     line-height:1.2rem;
   }
 }
+@media all and (min-width:1023px){
+  .about-section-3 div:last-child{
+    align-self:center;
+    padding-top:4rem;
+  }
+}
+@media all and (min-width:1279px){
+  .about-section-3 div:last-child p{
+    padding:1.2rem;
+    font-size:1rem;
+  }
+}
 
 @media all and (min-width:765px){
   .about-section-4{
@@ -1376,6 +1435,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   }
   .about-section-4 span, .about-section-4 p {
     padding: 0 1rem;
+  }
+}
+@media all and (min-width:1023px){
+  .about-section-4{
+    gap:2rem;
   }
 }
 
@@ -1499,6 +1563,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     text-align:left;
   }
 }
+@media all and (min-width:1023px){
+  .about-section-5 div:first-child{
+    gap:1rem;
+  }
+}
 
 .about-container .todays-quote-container{
   padding:1.5rem 1rem !important;
@@ -1507,7 +1576,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 }
   @media all and (min-width:765px){
     .about-container .todays-quote-container{
-      padding:2rem 2rem;
+      padding:2rem 2rem !important;
+    }
+  }
+  @media all and (min-width:1279px){
+    .about-container .todays-quote-container{
+      padding:3rem 4rem !important;
     }
   }
 
@@ -1518,5 +1592,10 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   @media all and (min-width:765px){
     .animate-quote{
       font-size:0.8rem !important;
+    }
+  }
+  @media all and (min-width:1279px){
+    .animate-quote{
+      font-size:1rem !important;
     }
   }
