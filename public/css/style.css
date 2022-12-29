@@ -237,6 +237,11 @@ a.btn, a.btn:hover{
   }
   @media all and (min-width:1439px){
     .masthead{
+      padding:8rem 0;
+    }
+  }
+  @media all and (min-width:1800px){
+    .masthead{
       padding:10rem 0;
     }
   }
@@ -1236,6 +1241,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       text-align:left;
     }
   }
+  @media all and (min-width:1439px){
+    .about-container p{
+      font-size:1.2rem;
+      line-height:1.4rem;
+    }
+  }
 
 .about-section-1 {
   display:flex;
@@ -1278,6 +1289,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       padding: 0 16rem;
     }
   }
+  @media all and (min-width:1439px){
+    .about-section-1 p{
+      font-size:1.3rem;
+      padding: 0 20rem;
+    }
+  }
   @media all and (min-width:1800px){
     .about-section-1 p{
       font-size:1.4rem;
@@ -1294,6 +1311,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   @media all and (min-width:1023px){
     .logo-container{
       width:25%;
+    }
+  }
+  @media all and (min-width:1439px){
+    .logo-container{
+      width:15%;
     }
   }
   @media all and (min-width:1800px){
@@ -1329,6 +1351,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     .lg-font{
       font-size:1.3rem;
       line-height:1.75rem;
+    }
+  }
+  @media all and (min-width:1439px){
+    .lg-font{
+      font-size:1.5rem;
+      line-height:2.5rem;
     }
   }
   @media all and (min-width:1800px){
@@ -1377,6 +1405,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     .about-section-2 p:nth-child(odd){
       text-align:left;
       font-size:1.1rem;
+    }
+  }
+  @media all and (min-width:1439px){
+    .about-section-2 p:nth-child(odd){
+      font-size:1.25rem;
+      padding: 0.5rem 2.5rem;
     }
   }
 
@@ -1434,7 +1468,7 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     padding: 0 5rem;
   }
   .about-section-4 span, .about-section-4 p {
-    padding: 0 1rem;
+    padding: 0 3rem;
   }
 }
 @media all and (min-width:1023px){
@@ -1457,6 +1491,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   }
   #prompts-gif{
     width:60%;
+  }
+}
+@media all and (min-width:1279px){
+  #calendar-gif{
+    width:90%;
   }
 }
 
@@ -1588,6 +1627,7 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 .animate-quote{
   font-size:0.6rem !important;
   line-height:1rem !important;
+  padding:0;
 }
   @media all and (min-width:765px){
     .animate-quote{
