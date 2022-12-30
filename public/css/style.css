@@ -1461,6 +1461,17 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     font-size:1rem;
   }
 }
+@media all and (min-width:1439px){
+  .about-section-3 {
+    gap:0;
+  }
+  .about-section-3 div:last-child{
+    gap:1.5rem;
+  }
+  .about-section-3 div:last-child p{
+    padding: 1rem 2rem;
+  }
+}
 
 @media all and (min-width:765px){
   .about-section-4{
