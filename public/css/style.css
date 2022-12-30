@@ -1228,6 +1228,12 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
       gap:6rem;
     }
   }
+  @media all and (min-width:1800px){
+    .about-container{
+      padding: 8rem 18rem;
+      gap:8rem;
+    }
+  }
 
 .about-container p{
   font-size:0.8rem;
@@ -1298,7 +1304,7 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   @media all and (min-width:1800px){
     .about-section-1 p{
       font-size:1.4rem;
-      padding: 0 5rem;
+      padding: 0 30rem;
     }
   }
 
@@ -1340,6 +1346,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   @media all and (min-width:765px){
     .about-p-section{
       text-align:left;
+    }
+  }
+  @media all and (min-width:1800px){
+    .about-p-section{
+      gap:1.5rem;
     }
   }
 
@@ -1394,6 +1405,11 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
 .about-section-2 p:nth-child(2) {
   margin-top:0.5rem;
 }
+  @media all and (min-width:1800px){
+    .about-section-2 p:nth-child(2){
+      margin-top:1.5rem;
+    }
+  }
 
 .about-section-2 p:nth-child(odd){
   text-align:center;
@@ -1454,6 +1470,9 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
     align-self:center;
     padding-top:4rem;
   }
+  .about-section-3 div:first-child span:nth-child(2){
+    padding-left:7rem;
+  }
 }
 @media all and (min-width:1279px){
   .about-section-3 div:last-child p{
@@ -1470,6 +1489,9 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   }
   .about-section-3 div:last-child p{
     padding: 1rem 2rem;
+  }
+  .about-section-3 div:first-child span:nth-child(2){
+    padding-left:8rem;
   }
 }
 
@@ -1494,21 +1516,26 @@ textarea:hover, textarea:focus, input:focus, .uneditable-input:focus {
   border-radius:10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-@media all and (min-width:765px){
-  #calendar-gif, #prompts-gif, #prompts-gif-2{
-    width:100%;
-    margin-top:1rem;
-    margin-bottom:0;
+  @media all and (min-width:765px){
+    #calendar-gif, #prompts-gif, #prompts-gif-2{
+      width:100%;
+      margin-top:1rem;
+      margin-bottom:0;
+    }
+    #prompts-gif{
+      width:60%;
+    }
   }
-  #prompts-gif{
-    width:60%;
+  @media all and (min-width:1279px){
+    #calendar-gif{
+      width:90%;
+    }
   }
-}
-@media all and (min-width:1279px){
-  #calendar-gif{
-    width:90%;
+  @media all and (min-width:1800px){
+    #calendar-gif, #prompts-gif, #prompts-gif-2{
+      margin-top:2rem;
+    }
   }
-}
 
 .slide-in-right {
   -webkit-animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
