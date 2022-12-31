@@ -129,6 +129,11 @@ a.btn, a.btn:hover{
   justify-content:center;
   padding: 1.5rem 1rem 0.5rem 1rem; 
 }
+  @media all and (min-width:374px){
+    .navbar{
+      padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    }
+  }
   @media all and (min-width:745px){
     .navbar{
       justify-content:space-between;
@@ -152,8 +157,15 @@ a.btn, a.btn:hover{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding-left:0.5rem;
+  padding-left:0;
 }
+
+@media all and (min-width:1439px){
+  .navbar-icon{
+    padding-right:0.25rem;
+  }
+}
+
 
 .site-title-container{
   display: flex;
@@ -203,8 +215,15 @@ a.btn, a.btn:hover{
   color:white;
 }
 
-.navbar-options{
-  padding-right:2rem;
+@media all and (min-width:765px){
+  .nav-links{
+    padding-right:1.5rem;
+  }
+}
+@media all and (min-width:1279px){
+  .nav-links{
+    padding-right:2.5rem;
+  }
 }
 
 .dropdown-toggle::after{
