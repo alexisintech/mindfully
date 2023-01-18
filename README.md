@@ -25,7 +25,9 @@
 
 - MongoDB, Mongoose.js
 - Node.js, Express.js
-- EJS, HTML5/CSS3, Javascript ES6
+- Passport.js
+- EJS, HTML5/CSS3 
+- Javascript ES6
 - ESlint, Stylelint
 - VSCode
 
