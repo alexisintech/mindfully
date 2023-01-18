@@ -31,9 +31,36 @@
 
 ## Get your own copy running!
 
-- Clone using your preferred method 
-- `npm i` 
-- `npm start`
+1. Navigate to the folder you would like to store the project
+2. Clone the repo
+   ```sh
+   git clone https://github.com/alexisintech/mindfully.git
+   ```
+3. Switch into the directory that was just created
+    ```sh
+    cd mindfully
+    ```
+4. Install NPM packages
+   ```sh
+   npm install
+   ```
+5. Navigate to the config folder
+6. Create a .env file there called `.env`
+7. Enter your MongoURI string in `.env` with the key `DB_STRING`
+   ```sh
+   DB_STRING="<Replace everything in quotes with MongoDB Connection String>"
+   ```
+8. To run the application, use `npm run start` to run the app in a development environment
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+## Roadmap
+
+- [X] Responsiveness with a mobile-first approach
+- [X] Remove redundant bootstrap by using vanilla CSS classes
+- [ ] "Choose year and month" prompt before displaying corresponding calendar
+- [ ] Refactor calendar
+- [ ] Organize all of a user's entries by month and year
+
+See the [open issues](https://github.com/alexisintech/mindfully/issues) for a full list of proposed features (and known issues).
