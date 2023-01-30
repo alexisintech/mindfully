@@ -1,10 +1,12 @@
-# [Mindfully](https://mindfully.up.railway.app/)
+# 🪐 [Mindfully](https://mindfully.up.railway.app/)
 
 > A full-stack app that encourages users to improve their mental health through mindfulness and journaling. 
 
 <img src="/public/imgs/mindfully.gif" width="100%" />
 
-## Features
+<!-- FEATURES -->
+
+## ⭐ Features
 
 ### Welcome page
 - User authentication supported using Passport.js and password encryption using Bcrypt password-hashing
@@ -22,7 +24,9 @@
 - View all past entries. Click on a specific entry to access its full view. 
 - View prompts that were created for you or by you. Create custom prompts to help guide your journaling process. 
 
-## Built With
+<!-- BUILT WITH -->
+
+## 🛠️ Built With
 
 - MongoDB, Mongoose.js
 - Node.js, Express.js
@@ -32,7 +36,9 @@
 - ESlint, Stylelint
 - VSCode
 
-## Get your own copy running!
+<!-- GET YOUR OWN COPY -->
+
+## 🚀 Get your own copy running!
 
 1. Navigate to the folder you would like to store the project
 2. Clone the repo
@@ -58,7 +64,9 @@
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-## Roadmap
+<!-- ROADMAP -->
+
+## 🌠 Roadmap
 
 - [X] Mobile-first design; responsiveness using CSS Flexbox
 - [X] Remove redundant bootstrap by using vanilla CSS classes
@@ -67,3 +75,7 @@ You will also see any lint errors in the console.
 - [ ] Organize all of a user's entries by month and year
 
 See the [open issues](https://github.com/alexisintech/mindfully/issues) for a full list of proposed features (and known issues).
+
+<!-- TEA SPILL -->
+## 🌝 Tea Spill
+Coming soon...
