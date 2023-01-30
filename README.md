@@ -13,6 +13,7 @@
 - Includes information on the extra special features of Mindfully designed to enhance the user experience 
 
 ### Profile page
+- Custom greetings based on time of day and user's name
 - Write journal entries every day either by using a blank slate or by using prompts
 - The calendar provides monthly overviews for users to be able to view past journal entries 
 - Randomly generated affirmations and reminders help redirect thoughts and attitudes into positive directions 
@@ -26,7 +27,7 @@
 - MongoDB, Mongoose.js
 - Node.js, Express.js
 - Passport.js
-- EJS, HTML5/CSS3 
+- EJS, Bootstrap, HTML5/CSS3 
 - Javascript ES6
 - ESlint, Stylelint
 - VSCode
@@ -59,7 +60,7 @@ You will also see any lint errors in the console.
 
 ## Roadmap
 
-- [X] Responsiveness with a mobile-first approach
+- [X] Mobile-first design; responsiveness using CSS Flexbox
 - [X] Remove redundant bootstrap by using vanilla CSS classes
 - [ ] "Choose year and month" prompt before displaying corresponding calendar
 - [ ] Refactor calendar
